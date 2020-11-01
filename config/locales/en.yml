@@ -30,4 +30,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app_title: NBA League Passthrough
+  app_description: A website to follow-up all NBA statistics, teams fixtures and points
