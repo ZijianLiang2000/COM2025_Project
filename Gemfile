@@ -50,5 +50,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'haml-rails'
-gem 'bootstrap-sass', '~> 2.0.0'
+gem 'bootstrap-sass', '~> 3.2.0'
 gem 'modernizr-rails'

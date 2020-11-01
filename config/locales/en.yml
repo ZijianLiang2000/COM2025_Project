@@ -32,3 +32,8 @@
 en:
   app_title: NBA League Passthrough
   app_description: A website to follow-up all NBA statistics, teams fixtures and points
+
+  home:
+    home:
+      title: NBA League Passthrough
+      welcome: welcome to this website to follow-up all NBA statistics, teams fixtures and points
