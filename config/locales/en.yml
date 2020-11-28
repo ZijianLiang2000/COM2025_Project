@@ -37,3 +37,22 @@ en:
     home:
       title: NBA League Passthrough
       welcome: welcome to this website to follow-up all NBA statistics, teams fixtures and points
+  
+  contact:
+    contact:
+      name: "Name:"
+      enter_name: Enter your name
+      email: "Email:"
+      enter_email: Enter your email address
+      nbaPassCode: "NBA Pass Code:"
+      enter_nbaPassCode: Enter your NBA Pass Code
+      telephone: "Telephone:"
+      enter_telephone: Enter your telephone number
+      message: "Message:"
+      enter_message: What do you want to say?
+      submit: Contact Us
+    
+    request_contact:
+      no_email: You must provide an email address
+      email_sent: Thank you, you will be reached as soon as possible
+

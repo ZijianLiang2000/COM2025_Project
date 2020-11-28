@@ -1,0 +1,36 @@
+// Place all the styles related to the contact controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+form label{
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 360px;
+    text-align: center;
+
+} form input:not(.submitTag), form textarea{
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 360px;
+    text-align: center;
+    background-color: rgb(253, 253, 253);
+    transition: 150ms;
+    border-radius: 5px;
+} form input:not(.submitTag):hover, form textarea:hover{
+    background-color: rgb(231, 253, 255);
+} form input:not(.submitTag):focus, form textarea:focus{
+    background-color: rgb(231, 253, 255);
+}
+ form .submitTag{
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 100px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    transition: 250ms;
+}form .submitTag:hover{
+    background-color: rgb(242, 254, 255);
+}
