@@ -4,3 +4,16 @@
 %h2 background-size: auto (default):
 #example1
   %p The background image is displayed in its original size.
+
+.container
+  .row
+    .col-lg-12.mt-5
+      - if flash[:alert]
+        .alert.alert-warning= flash[:alert]
+      .mx-auto.mt-5{:style => "width: 400px"}
+        = form_with(url: search_path, method: 'get', local: true) do
+          .form-group
+            = label_tag :team, 'Search for a team '
+            = text_field_tag :team, nil, placeholder: 'Eg. Hawks', class: 'form-control'
+          = button_tag 'Search', class: 'btn btn-success btn-block'
+

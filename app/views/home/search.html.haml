@@ -1,0 +1,20 @@
+.container
+  .row.mt-5
+    .col-lg-6
+      %h4 Country info
+      %dl
+        %dt Team
+        %dd= @team['fullName']
+        %dt Team ID
+        %dd= @team['teamId']
+        %dt NBA Franchise
+        %dd= @team['nbaFranchise']
+        %dt LOGO
+        =link_to image_tag(@team['logo'])
+    .col-lg-6
+      %h4 Player Info
+      %dl
+        - @player["api"]['players'].each do |player|
+          %dt Name
+          %dd= player['firstName']
+          %dd= player['lastName']
