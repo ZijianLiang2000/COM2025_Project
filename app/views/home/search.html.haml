@@ -1,7 +1,7 @@
 .container
   .row.mt-5
     .col-lg-6
-      %h4 Country info
+      %h4 Team info
       %dl
         %dt Team
         %dd= @team['fullName']
@@ -13,8 +13,20 @@
         =link_to image_tag(@team['logo'])
     .col-lg-6
       %h4 Player Info
+      %h4 Player Name
       %dl
         - @player["api"]['players'].each do |player|
-          %dt Name
-          %dd= player['firstName']
-          %dd= player['lastName']
+          %dt
+            -# %a{ href: "playerSearch", :playerId => player['playerId'] } #{player['firstName']} #{player['lastName']} (Player ID: #{player['playerId']})
+            #{player['firstName']} #{player['lastName']}
+          
+    .col-lg-6
+      %h4 Team Standings
+      %h4 2019-2020 Season
+      %dl 
+        %dt Win
+        %dd= @teamStandings["api"]["standings"][0]["win"]
+        %dt Loss
+        %dd= @teamStandings["api"]["standings"][0]["loss"]
+        %dt Conference: #{@teamStandings["api"]["standings"][0]["conference"]["name"]}
+        %dd= "Ranking: #{@teamStandings["api"]["standings"][0]["conference"]["rank"]}"

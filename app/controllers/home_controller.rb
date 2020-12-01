@@ -9,24 +9,49 @@ class HomeController < ApplicationController
     )
   end
 
+  def playerSearch
+    players = find_PlayerID(params[:playerId])
+
+    if players == nil
+      flash[:alert] = 'Player not found, please try again'
+      return render action: :home
+    end
+
+    @newPlayer = players["api"]["players"][0]
+
+  end
+
+  def find_PlayerID(playerId)
+    request_api("https://api-nba-v1.p.rapidapi.com/players/playerId/#{playerId}") 
+  end
+
   def search
     # Teams will return requested api of "https://api-nba-v1.p.rapidapi.com/teams/nickName/Hornets"
     teams = find_team(params[:team])
 
-    unless teams
-      flash[:alert] = 'Team not found'
-      return render action: :home
-    end
-    
+    # unless teams
+    #   flash[:alert] = 'Team not found'
+    #   return render action: :home
+    # end
+
     # @team parameter will be first item under teams api
     @team = teams["api"]["teams"].first
+
+    if @team == nil
+      flash[:alert] = 'Team not found, please try again'
+      return render action: :home
+    end
     @player = find_player(@team['teamId'])
+    @teamStandings = find_standings(@team['teamId'],2019)
+  end
+
+  def find_standings(team_id, season_year)
+    request_api("https://api-nba-v1.p.rapidapi.com/standings/standard/#{season_year}/teamId/#{team_id}") 
   end
 
   def find_player(team_id)
     # query = URI.encode("#{team_id}")
-    request_api("https://api-nba-v1.p.rapidapi.com/players/teamId/#{team_id}")
-    
+    request_api("https://api-nba-v1.p.rapidapi.com/players/teamId/#{team_id}") 
   end
   
   def request_api(url)
