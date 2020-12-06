@@ -1,0 +1,35 @@
+%h1 Listing games
+
+%table
+  %thead
+    %tr
+      %th Hometeamid
+      %th Awayteamid
+      %th Hometeamname
+      %th Awayteamname
+      %th Gamewinnerid
+      %th Hometeamscore
+      %th Awayteamscore
+      %th Gamedate
+      %th
+      %th
+      %th
+
+  %tbody
+    - @games.each do |game|
+      %tr
+        %td= game.homeTeamId
+        %td= game.awayTeamId
+        %td= game.homeTeamName
+        %td= game.awayTeamName
+        %td= game.gameWinnerId
+        %td= game.homeTeamScore
+        %td= game.awayTeamScore
+        %td= game.gameDate
+        %td= link_to 'Show', game
+        %td= link_to 'Edit', edit_game_path(game)
+        %td= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Game', new_game_path

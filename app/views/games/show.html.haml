@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Hometeamid:
+  = @game.homeTeamId
+%p
+  %b Awayteamid:
+  = @game.awayTeamId
+%p
+  %b Hometeamname:
+  = @game.homeTeamName
+%p
+  %b Awayteamname:
+  = @game.awayTeamName
+%p
+  %b Gamewinnerid:
+  = @game.gameWinnerId
+%p
+  %b Hometeamscore:
+  = @game.homeTeamScore
+%p
+  %b Awayteamscore:
+  = @game.awayTeamScore
+%p
+  %b Gamedate:
+  = @game.gameDate
+
+= link_to 'Edit', edit_game_path(@game)
+\|
+= link_to 'Back', games_path

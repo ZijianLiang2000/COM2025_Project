@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  homeTeamId: 1
+  awayTeamId: 
+  homeTeamName: MyString
+  awayTeamName: MyString
+  gameWinnerId: 1
+  homeTeamScore: 1
+  awayTeamScore: 1
+  gameDate: 2020-12-06
+
+two:
+  homeTeamId: 1
+  awayTeamId: 
+  homeTeamName: MyString
+  awayTeamName: MyString
+  gameWinnerId: 1
+  homeTeamScore: 1
+  awayTeamScore: 1
+  gameDate: 2020-12-06

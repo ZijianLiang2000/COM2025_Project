@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :games
   root 'home#home'
 
   post 'request_contact', to:"contact#request_contact"
