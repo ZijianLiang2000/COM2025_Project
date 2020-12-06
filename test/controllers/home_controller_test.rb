@@ -2,7 +2,7 @@ require 'test_helper'
 
 class HomeControllerTest < ActionDispatch::IntegrationTest
   test "should get home" do
-    get home_home_url
+    get root_path
     assert_response :success
   end
 
@@ -12,9 +12,8 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
 
     assert_template layout: 'application'
 
-    assert_select 'title', 'My Notes'
-    assert_select 'h1', 'Contact Us'
-    assert_select 'p', 'Complete the following form to get in touch with us.'
+    assert_select 'title', 'NBA League Passthrough'
+    assert_select 'h1', 'Contact Page'
 
   end
   
@@ -30,7 +29,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
   test "should post request contact" do
     post request_contact_url, params:
       {name: "Matthew", email: "matthew@me.com",
-        telephone: "1234567890", message: "Hello"}
+        telephone: "1234567890", nbaPassCode:"1104777236" message: "Hello"}
 
     assert_response :redirect
     assert_nil flash[:alert]

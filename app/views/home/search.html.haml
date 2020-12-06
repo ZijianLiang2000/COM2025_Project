@@ -1,4 +1,4 @@
-.container
+.searchContainer
   .row.mt-5
     .col-lg-6
       %h4 Team info
@@ -10,19 +10,15 @@
         %dt NBA Franchise
         %dd= @team['nbaFranchise']
         %dt LOGO
-        =link_to image_tag(@team['logo'])
-    .col-lg-6
-      %h4 Player Info
-      %h4 Player Name
-      %dl
-        - @player["api"]['players'].each do |player|
-          %dt
-            -# %a{ href: "playerSearch", :playerId => player['playerId'] } #{player['firstName']} #{player['lastName']} (Player ID: #{player['playerId']})
-            #{player['firstName']} #{player['lastName']}
-          
-    .col-lg-6
+        .logo
+          =link_to image_tag(@team['logo'])
+    
+    .teamStandings
       %h4 Team Standings
-      %h4 2019-2020 Season
+      %h4
+        -# Wanted to store team ID as a variable ':teamId' and pass it to controller to use, but unsuccessful
+        -# %a{ href: "seasonSearch", :teamId => @team['teamId']} Season #{@year} 
+        Season #{@year} 
       %dl 
         %dt Win
         %dd= @teamStandings["api"]["standings"][0]["win"]
@@ -30,3 +26,12 @@
         %dd= @teamStandings["api"]["standings"][0]["loss"]
         %dt Conference: #{@teamStandings["api"]["standings"][0]["conference"]["name"]}
         %dd= "Ranking: #{@teamStandings["api"]["standings"][0]["conference"]["rank"]}"
+    .roster
+      %h4 Roster
+      %h4 Player Name
+      %dl
+        - @player["api"]['players'].each do |player|
+          %dt
+            #{player['firstName']} #{player['lastName']} (Position: #{player['leagues'].first[1]["pos"]}, ##{player['leagues'].first[1]["jersey"]})
+          
+    

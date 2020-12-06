@@ -11,8 +11,8 @@ class NavigationControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get table" do
-    get navigation_table_url
+  test "should get teams" do
+    get navigation_teams_url
     assert_response :success
   end
 

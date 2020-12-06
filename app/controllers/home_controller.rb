@@ -9,17 +9,14 @@ class HomeController < ApplicationController
     )
   end
 
-  def playerSearch
-    players = find_PlayerID(params[:playerId])
+  
+  # def seasonSearch
+  #   @seasons = find_Season(@teamId)
+  # end
 
-    if players == nil
-      flash[:alert] = 'Player not found, please try again'
-      return render action: :home
-    end
-
-    @newPlayer = players["api"]["players"][0]
-
-  end
+  # def find_Season(team_id)
+  #   request_api("https://api-nba-v1.p.rapidapi.com/games/teamId/#{team_id}") 
+  # end
 
   def find_PlayerID(playerId)
     request_api("https://api-nba-v1.p.rapidapi.com/players/playerId/#{playerId}") 
@@ -46,6 +43,8 @@ class HomeController < ApplicationController
   end
 
   def find_standings(team_id, season_year)
+    @year = season_year
+    @teamId = team_id
     request_api("https://api-nba-v1.p.rapidapi.com/standings/standard/#{season_year}/teamId/#{team_id}") 
   end
 
