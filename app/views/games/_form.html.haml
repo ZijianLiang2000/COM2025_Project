@@ -7,28 +7,29 @@
           %li= message
 
   .field
-    = f.label :homeTeamId
+    = f.label t('.homeTeamId')
     = f.number_field :homeTeamId
   .field
-    = f.label :awayTeamId
-    = f.text_field :awayTeamId
+    = f.label t('.awayTeamId')
+    = f.number_field :awayTeamId
   .field
-    = f.label :homeTeamName
+    = f.label t('.homeTeamName')
     = f.text_field :homeTeamName
   .field
-    = f.label :awayTeamName
+    = f.label t('.awayTeamName')
     = f.text_field :awayTeamName
   .field
-    = f.label :gameWinnerId
+    = f.label t('.gameWinnerId')
     = f.number_field :gameWinnerId
   .field
-    = f.label :homeTeamScore
+    = f.label t('.homeTeamScore')
     = f.number_field :homeTeamScore
   .field
-    = f.label :awayTeamScore
+    = f.label t('.awayTeamScore')
     = f.number_field :awayTeamScore
   .field
-    = f.label :gameDate
-    = f.date_select :gameDate
+    .date
+      = f.label t('.gameDate')
+      = f.date_select :gameDate
   .actions
     = f.submit 'Save'

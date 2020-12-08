@@ -2,6 +2,5 @@
 
 = render 'form'
 
-= link_to 'Show', @game
-\|
-= link_to 'Back', games_path
+= button_to 'Show', @game, :method => :get
+= button_to 'Back', games_path, :method => :get

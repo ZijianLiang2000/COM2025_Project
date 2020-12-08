@@ -9,35 +9,26 @@ form label{
     margin: 0 auto;
     margin-right: auto;
     margin-top: 15px;
-    width: 360px;
+    width: 250px;
     text-align: center;
 
 } form input:not(.submitTag), form textarea{
     display: block;
     margin: 0 auto;
     margin-top: 15px;
-    width: 360px;
+    width: 250px;
     text-align: center;
-    background-color: rgb(253, 253, 253);
     transition: 150ms;
     border-radius: 5px;
-} form input:not(.submitTag):hover, form textarea:hover{
-    background-color: rgb(231, 253, 255);
-} form input:not(.submitTag):focus, form textarea:focus{
-    background-color: rgb(231, 253, 255);
 }
  form .submitTag{
     display: block;
     margin: 0 auto;
     margin-top: 15px;
-    width: 100px;
+    width: 250px;
     border: none;
     border-radius: 6px;
-    border-color: white;
-    text-align: center;
-    color: white;
-    background-color: rgb(109, 202, 114);
     transition: 250ms;
-}form .submitTag:hover{
-    background-color: rgb(81, 126, 77);
+} form .messageTextField{
+    width: 250px;
 }

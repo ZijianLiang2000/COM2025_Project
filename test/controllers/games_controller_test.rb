@@ -16,8 +16,11 @@ class GamesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create game" do
+    # This test will create a new game into db, and see if game counts increases by one.
+    # Problem will occur if game couldn't be created, eg the generated primary key is the same as previous one.
     assert_difference('Game.count') do
-      post games_url, params: { game: { awayTeamId: @game.awayTeamId, awayTeamName: @game.awayTeamName, awayTeamScore: @game.awayTeamScore, gameDate: @game.gameDate, gameWinnerId: @game.gameWinnerId, homeTeamId: @game.homeTeamId, homeTeamName: @game.homeTeamName, homeTeamScore: @game.homeTeamScore } }
+      post games_url, params: { game: { awayTeamId: 1, awayTeamName: 'AtlantaHawks', awayTeamScore: 123, gameDate: '2020-10-03',
+       gameWinnerId: 1, homeTeamId: 2, homeTeamName: 'BostonCeltics', homeTeamScore: 100 } }
     end
 
     assert_redirected_to game_url(Game.last)

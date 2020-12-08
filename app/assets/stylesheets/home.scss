@@ -8,18 +8,24 @@
 //     background-repeat: no-repeat;
 //     background-size: auto;
 //   }
-#cover .img_class{
+
+
+// reference: https://1stwebdesigner.com/15-css-background-effects/
+#home {
+  // background-image: url("https://freefrontend.com/assets/img/css-background-patterns/pure-css-halftone-pattern.png");
+}
+#home #cover .img_class{
     max-width: 100%;
     height: auto;
     width: auto\9; /* ie8 */
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }div.mx-auto{
+  }#home div.mx-auto{
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }h1,p{
+  }#home h1,p{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -27,7 +33,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-  }div.col-lg-6{
+  }#home div.col-lg-6{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -35,7 +41,7 @@
     width:100%;
     height:300px;
     position:absolute;
-  }div.roster{
+  }#home div.roster{
     text-align: center;
     margin-left: 50%;
     display: block;
@@ -43,7 +49,7 @@
     height:200px;
 	  position: relative;
     top: 170px;
-  }div.teamStandings{
+  }#home div.teamStandings{
     display: block;
     text-align: center;
     margin-left: 30px;
@@ -51,7 +57,7 @@
     margin-right: auto;
     position: relative;
     top: 370px;
-  }div.logo{
+  }#home div.logo{
     display: inline-block;
     height: auto;
     width: auto;

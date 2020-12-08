@@ -56,3 +56,33 @@ en:
       no_email: You must provide an email address
       email_sent: Thank you, you will be reached as soon as possible
 
+  games:
+    form:
+      homeTeamId: "Home Team ID"
+      awayTeamId: "Away Team ID"
+      homeTeamName: "Home Team Name"
+      awayTeamName: "Away Team Name"
+      gameWinnerId: "Game Winner Team ID"
+      homeTeamScore: "Home Team Score"
+      awayTeamScore: "Away Team Score"
+      gameDate: "Date of Game"
+    
+    show:
+      homeTeamId: "Home Team ID"
+      awayTeamId: "Away Team ID"
+      homeTeamName: "Home Team Name"
+      awayTeamName: "Away Team Name"
+      gameWinnerId: "Game Winner Team ID"
+      homeTeamScore: "Home Team Score"
+      awayTeamScore: "Away Team Score"
+      gameDate: "Date of Game"
+    
+    index:
+      title: "Fixture Timetable"
+      homeTeamName: "Team (Home)"
+      awayTeamName: "(Away) Team"
+      gameWinnerId: "Game Winner Team ID"
+      homeTeamScore: "Score"
+      awayTeamScore: "Score"
+      gameDate: "Date of Game"
+      show: "More"

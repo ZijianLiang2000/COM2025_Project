@@ -1,21 +1,22 @@
-%h1=t('.title')
-%p=t('.welcome')
+#home
+  %h1.display-1=t('.title')
+  %p.blockquote-footer=t('.welcome')
 
-%h2
-#cover
-  -#Inserting cover image 
-  =image_tag 'C:\Sites\COM2025_Project\app\assets\images\HomeCover.png', :class => "img_class"
+  %h2
+  #cover
+    -#Inserting cover image 
+    =image_tag 'C:\Sites\COM2025_Project\app\assets\images\HomeCover.png', :class => "img_class"
 
-.container
-  .row
-    .col-lg-12.mt-5
-      -# - if flash[:alert]
-      -#   .alert.alert-warning= flash[:alert]
-      .mx-auto{:style => "width: 400px"}
-        = form_with(url: search_path, method: 'get', local: true) do
-          .form-group
-            = label_tag :team, 'Search for an NBA team '
-            = text_field_tag :team, nil, placeholder: 'Eg. Hawks', class: 'form-control'
-          = button_tag 'Search', class: 'btn btn-success btn-block'
+  .container
+    .row
+      .col-lg-12.mt-5
+        -# - if flash[:alert]
+        -#   .alert.alert-warning= flash[:alert]
+        .mx-auto{:style => "width: 400px"}
+          = form_with(url: search_path, method: 'get', local: true) do
+            .form-group
+              = label_tag :team, 'Search for an NBA team '
+              = text_field_tag :team, nil, placeholder: 'Eg. Hawks', class: 'form-control'
+            = button_tag 'Search', class: 'btn btn-success btn-block'
           
 

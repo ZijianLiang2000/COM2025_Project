@@ -1,21 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  homeTeamId: 1
-  awayTeamId: 
-  homeTeamName: MyString
-  awayTeamName: MyString
-  gameWinnerId: 1
-  homeTeamScore: 1
-  awayTeamScore: 1
-  gameDate: 2020-12-06
+  homeTeamId: 2
+  awayTeamId: 1
+  homeTeamName: BostonCeltics
+  awayTeamName: AtlantaHawks
+  gameWinnerId: 2
+  homeTeamScore: 109
+  awayTeamScore: 106
+  gameDate: 2020-01-04
 
 two:
   homeTeamId: 1
-  awayTeamId: 
-  homeTeamName: MyString
-  awayTeamName: MyString
-  gameWinnerId: 1
-  homeTeamScore: 1
-  awayTeamScore: 1
-  gameDate: 2020-12-06
+  awayTeamId: 2
+  homeTeamName: AtlantaHawks
+  awayTeamName: BostonCeltics
+  gameWinnerId: 2
+  homeTeamScore: 115
+  awayTeamScore: 123
+  gameDate: 2020-02-04

@@ -1,35 +1,42 @@
-%h1 Listing games
+#timeTable
+  %h1 
+    =t('.title')
 
-%table
-  %thead
-    %tr
-      %th Hometeamid
-      %th Awayteamid
-      %th Hometeamname
-      %th Awayteamname
-      %th Gamewinnerid
-      %th Hometeamscore
-      %th Awayteamscore
-      %th Gamedate
-      %th
-      %th
-      %th
+  - @games.each do |game|
+    %table
+      %thead
+        %tr
+          %th{:colspan => 5}=game.gameDate
 
-  %tbody
-    - @games.each do |game|
-      %tr
-        %td= game.homeTeamId
-        %td= game.awayTeamId
-        %td= game.homeTeamName
-        %td= game.awayTeamName
-        %td= game.gameWinnerId
-        %td= game.homeTeamScore
-        %td= game.awayTeamScore
-        %td= game.gameDate
-        %td= link_to 'Show', game
-        %td= link_to 'Edit', edit_game_path(game)
-        %td= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }
+      %thead
+        %tr    
+          %th 
+            =t('.homeTeamName')
 
-%br
+          -# %th
+          -#   =t('.gameWinnerId')
+          %th
+            =t('.homeTeamScore')
+          %th
+          %th
+            =t('.awayTeamScore')
+          %th
+            =t('.awayTeamName')          
+          -# %th
+          -# %th
 
-= link_to 'New Game', new_game_path
+      %tbody
+        %tr
+          %td= game.homeTeamName
+          -# %td= game.gameWinnerId
+          %td= game.homeTeamScore
+          %td= ":"
+          %td= game.awayTeamScore
+          %td= game.awayTeamName
+        %tr
+          %td{:colspan => 5}= link_to 'More', game
+          -# %td= link_to ' Edit ', edit_game_path(game)
+          -# %td= link_to ' Destroy ', game, method: :delete, data: { confirm: 'Are you sure?' }
+      %br
+
+  = button_to 'New Game', new_game_path, :method => :get, :class => "btn btn-primary"

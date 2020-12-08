@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teamId: 1
+  teamName: MyString
+  gamesPlayedId: 1
+  gamesToBePlayedId: 1
+
+two:
+  teamId: 1
+  teamName: MyString
+  gamesPlayedId: 1
+  gamesToBePlayedId: 1
