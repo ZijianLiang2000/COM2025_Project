@@ -5,13 +5,10 @@
       %ul
         - @game.errors.full_messages.each do |message|
           %li= message
-
+  
   .field
-    = f.label t('.homeTeamId')
-    = f.number_field :homeTeamId
-  .field
-    = f.label t('.awayTeamId')
-    = f.number_field :awayTeamId
+    = f.label t('.teamId')
+    = f.number_field :teamId
   .field
     = f.label t('.homeTeamName')
     = f.text_field :homeTeamName

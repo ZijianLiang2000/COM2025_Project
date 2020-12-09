@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201208155158) do
+ActiveRecord::Schema.define(version: 20201209125819) do
 
   create_table "games", force: :cascade do |t|
-    t.integer "homeTeamId", null: false
-    t.integer "awayTeamId", null: false
+    t.integer "teamId", null: false
     t.string "homeTeamName", null: false
     t.string "awayTeamName", null: false
     t.integer "gameWinnerId"
@@ -25,11 +24,19 @@ ActiveRecord::Schema.define(version: 20201208155158) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "games_teams", force: :cascade do |t|
+    t.integer "team_id"
+    t.integer "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_games_teams_on_game_id"
+    t.index ["team_id"], name: "index_games_teams_on_team_id"
+  end
+
   create_table "teams", force: :cascade do |t|
     t.integer "teamId"
     t.string "teamName"
-    t.integer "gamesPlayedId"
-    t.integer "gamesToBePlayedId"
+    t.integer "gamesId"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

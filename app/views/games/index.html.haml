@@ -3,18 +3,15 @@
     =t('.title')
 
   - @games.each do |game|
-    %table
-      %thead
+    %table.table.table-striped
+      %thead.thead-dark
         %tr
           %th{:colspan => 5}=game.gameDate
 
-      %thead
+      %thead.thead-dark
         %tr    
           %th 
             =t('.homeTeamName')
-
-          -# %th
-          -#   =t('.gameWinnerId')
           %th
             =t('.homeTeamScore')
           %th

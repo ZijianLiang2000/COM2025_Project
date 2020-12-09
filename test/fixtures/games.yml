@@ -1,8 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  homeTeamId: 2
-  awayTeamId: 1
+  teamId: 2
   homeTeamName: BostonCeltics
   awayTeamName: AtlantaHawks
   gameWinnerId: 2
@@ -11,8 +10,7 @@ one:
   gameDate: 2020-01-04
 
 two:
-  homeTeamId: 1
-  awayTeamId: 2
+  teamId: 1
   homeTeamName: AtlantaHawks
   awayTeamName: BostonCeltics
   gameWinnerId: 2

@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   teamId: 1
-  teamName: MyString
+  teamName: Atlanta Hawks
   gamesPlayedId: 1
-  gamesToBePlayedId: 1
+  gamesToBePlayedId: 2
 
 two:
-  teamId: 1
-  teamName: MyString
+  id: 2
+  teamId: 2
+  teamName: Boston Celtics
   gamesPlayedId: 1
-  gamesToBePlayedId: 1
+  gamesToBePlayedId: 2

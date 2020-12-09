@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   
-  resources :teams
+
   # These are routes for navigation bar to work under game layer
   # which occurs during rendering 'Show' or 'New' views for games object
-  get 'games/navigation_home' => 'home#home'
-  get 'games/navigation_games' => 'games#index'
-  get 'games/navigation_teams' => 'navigation#teams'
-  get 'games/navigation_contact' => 'contact#contact'
+  get 'games/:id/navigation_home' => 'home#home'
+  get 'games/:id/navigation_games' => 'games#index'
+  get 'games/:id/navigation_teams' => 'navigation#teams'
+  get 'games/:id/navigation_contact' => 'contact#contact'
   
+  resources :teams
   resources :games
   
   root 'home#home'
