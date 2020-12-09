@@ -1,18 +1,9 @@
 %p#notice= notice
 
 %p
-  %b Teamid:
-  = @team.teamId
-%p
-  %b Teamname:
+  %b
+    =t('.teamName')
   = @team.teamName
-%p
-  %b Gamesplayedid:
-  = @team.gamesPlayedId
-%p
-  %b Gamestobeplayedid:
-  = @team.gamesToBePlayedId
 
-= link_to 'Edit', edit_team_path(@team)
-\|
-= link_to 'Back', teams_path
+= button_to 'Edit', edit_team_path(@team), :method => :get, class: "btn btn-primary"
+= button_to 'Back', teams_path, :method => :get, class: "btn btn-primary"

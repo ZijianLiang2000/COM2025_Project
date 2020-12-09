@@ -1,27 +1,21 @@
-%h1 Listing teams
+#teamsTable
+  %h1 Listing teams
 
-%table
-  %thead
-    %tr
-      %th Teamid
-      %th Teamname
-      %th Gamesplayedid
-      %th Gamestobeplayedid
-      %th
-      %th
-      %th
-
-  %tbody
-    - @teams.each do |team|
+  %table.table.table-striped
+    %thead.thead-dark
       %tr
-        %td= team.teamId
-        %td= team.teamName
-        %td= team.gamesPlayedId
-        %td= team.gamesToBePlayedId
-        %td= link_to 'Show', team
-        %td= link_to 'Edit', edit_team_path(team)
-        %td= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' }
+        %th{:colspan => 4} Team Name
 
-%br
+    %tbody
+      - @teams.each do |team|
+        %tr
+          .teamName
+            %td= team.teamName
+          .linkTag
+            %td= link_to 'Show', team
+            %td= link_to 'Edit', edit_team_path(team)
+            %td= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' }
 
-= link_to 'New Team', new_team_path
+  %br
+
+  = button_to 'New Team', new_team_path, :method => :get, :class => "btn btn-primary"

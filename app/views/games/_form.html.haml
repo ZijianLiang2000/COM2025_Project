@@ -1,32 +1,30 @@
-= form_for @game do |f|
-  - if @game.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@game.errors.count, "error")} prohibited this game from being saved:"
-      %ul
-        - @game.errors.full_messages.each do |message|
-          %li= message
-  
-  .field
-    = f.label t('.teamId')
-    = f.number_field :teamId
-  .field
-    = f.label t('.homeTeamName')
-    = f.text_field :homeTeamName
-  .field
-    = f.label t('.awayTeamName')
-    = f.text_field :awayTeamName
-  .field
-    = f.label t('.gameWinnerId')
-    = f.number_field :gameWinnerId
-  .field
-    = f.label t('.homeTeamScore')
-    = f.number_field :homeTeamScore
-  .field
-    = f.label t('.awayTeamScore')
-    = f.number_field :awayTeamScore
-  .field
-    .date
-      = f.label t('.gameDate')
-      = f.date_select :gameDate
-  .actions
-    = f.submit 'Save'
+#gameForm
+  = form_for @game do |f|
+    - if @game.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@game.errors.count, "error")} prohibited this game from being saved:"
+        %ul
+          - @game.errors.full_messages.each do |message|
+            %li= message
+    
+    .field
+      = f.label t('.homeTeamName')
+      = f.text_field :homeTeamName, class:"form-control"
+    .field
+      = f.label t('.awayTeamName')
+      = f.text_field :awayTeamName, class:"form-control"
+    .field
+      = f.label t('.gameWinnerId')
+      = f.number_field :gameWinnerId, class:"form-control"
+    .field
+      = f.label t('.homeTeamScore')
+      = f.number_field :homeTeamScore, class:"form-control"
+    .field
+      = f.label t('.awayTeamScore')
+      = f.number_field :awayTeamScore, class:"form-control"
+    .field
+      .date
+        = f.label t('.gameDate')
+        = f.date_select :gameDate
+    .actions
+      = f.submit 'Save', class: "btn btn-primary"

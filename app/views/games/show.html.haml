@@ -1,9 +1,6 @@
 %p#notice= notice
 
-%p
-  %b
-    =t('.teamId')
-  = @game.teamId
+
 %p
   %b 
     =t('.homeTeamName')
@@ -29,5 +26,5 @@
     =t('.gameDate')
   = @game.gameDate
 
-= button_to 'Edit', edit_game_path(@game), :method => :get
-= button_to 'Back', games_path, :method => :get
+= button_to 'Edit', edit_game_path(@game), :method => :get, class: "btn btn-primary"
+= button_to 'Back', games_path, :method => :get, class: "btn btn-primary"

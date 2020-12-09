@@ -20,7 +20,7 @@ class GamesControllerTest < ActionDispatch::IntegrationTest
     # Problem will occur if game couldn't be created, eg the generated primary key is the same as previous one.
     assert_difference('Game.count') do
       post games_url, params: { game: { awayTeamName: 'AtlantaHawks', awayTeamScore: 123, gameDate: '2020-10-03',
-       gameWinnerId: 1, teamId: 1, homeTeamName: 'BostonCeltics', homeTeamScore: 100 } }
+       gameWinnerId: 1, homeTeamName: 'BostonCeltics', homeTeamScore: 100 } }
     end
 
     assert_redirected_to game_url(Game.last)
@@ -37,7 +37,7 @@ class GamesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update game" do
-    patch game_url(@game), params: { game: { awayTeamName: @game.awayTeamName, awayTeamScore: @game.awayTeamScore, gameDate: @game.gameDate, gameWinnerId: @game.gameWinnerId, teamId: @game.teamId, homeTeamName: @game.homeTeamName, homeTeamScore: @game.homeTeamScore } }
+    patch game_url(@game), params: { game: { awayTeamName: @game.awayTeamName, awayTeamScore: @game.awayTeamScore, gameDate: @game.gameDate, homeTeamName: @game.homeTeamName, homeTeamScore: @game.homeTeamScore } }
     assert_redirected_to game_url(@game)
   end
 

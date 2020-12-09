@@ -58,7 +58,6 @@ en:
 
   games:
     form:
-      teamId: "Team ID"
       homeTeamName: "Home Team Name"
       awayTeamName: "Away Team Name"
       gameWinnerId: "Game Winner Team ID"
@@ -67,7 +66,7 @@ en:
       gameDate: "Date of Game"
     
     show:
-      teamId: "Team ID"
+
       homeTeamName: "Home Team Name"
       awayTeamName: "Away Team Name"
       gameWinnerId: "Game Winner Team ID"
@@ -84,3 +83,11 @@ en:
       awayTeamScore: "Score"
       gameDate: "Date of Game"
       show: "More"
+
+    edit:
+      editTitle: "Edit a Game"
+  
+  teams:
+    form:
+      teamName: "Team Name"
+

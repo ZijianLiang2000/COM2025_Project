@@ -2,14 +2,12 @@
 
 one:
   id: 1
-  teamId: 1
   teamName: Atlanta Hawks
   gamesPlayedId: 1
   gamesToBePlayedId: 2
 
 two:
   id: 2
-  teamId: 2
   teamName: Boston Celtics
   gamesPlayedId: 1
   gamesToBePlayedId: 2

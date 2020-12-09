@@ -1,6 +1,6 @@
-%h1 Editing game
+%h1=t('.editTitle')
 
 = render 'form'
 
-= button_to 'Show', @game, :method => :get
-= button_to 'Back', games_path, :method => :get
+= button_to 'Show', @game, :method => :get, class: "btn btn-primary"
+= button_to 'Back', games_path, :method => :get, class: "btn btn-primary"
