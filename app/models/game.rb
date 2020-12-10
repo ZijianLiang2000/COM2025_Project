@@ -6,4 +6,5 @@ class Game < ApplicationRecord
     validates :homeTeamName, presence: true
     validates :awayTeamName, presence: true
     validates :gameDate, presence: true
+
 end

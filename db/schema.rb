@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201209162629) do
+ActiveRecord::Schema.define(version: 20201210113042) do
 
   create_table "games", force: :cascade do |t|
     t.string "homeTeamName", null: false
