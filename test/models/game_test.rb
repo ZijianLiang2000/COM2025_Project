@@ -16,6 +16,22 @@ class GameTest < ActiveSupport::TestCase
     refute game.valid?
   end
 
+  test 'should save different games with same team'do
+  game1 = Game.new
+
+  team1 = Team.new
+  team1.id = 4
+  team1.teamName = "Charlotte Hornets"
+  team1.save
+
+  game1.id = 3
+  game1.homeTeamName = "Charlotte Hornets"
+  game1.awayTeamName = "Boston Celtics"
+  game1.gameDate = "2020-04-12"
+  game1.save
+  assert game1.valid?
+  end
+
   test 'should not save duplicated id'do
     game1 = Game.new
     team1 = Team.new
@@ -42,5 +58,16 @@ class GameTest < ActiveSupport::TestCase
     game2.save
     refute game2.valid?
   end
+
+  # test 'should not save game with invalid homeTeam name'do
+  # game1 = Game.new
+
+  # team1 = Team.new
+  # team1.id = 4
+  # team1.teamName = "Charlotte Hornets"
+  # team1.save
+
+  
+  # end
 
 end

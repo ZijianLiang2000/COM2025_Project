@@ -6,7 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 welcome = Game.where(id: 1).first
-# 
 welcome.delete if welcome
-# Home team Id 1 would be Atlanta Hawks, away team Id 2 will be Boston Celtics
-games = Game.create([homeTeamName: 'BostonCeltics', awayTeamName: 'AtlantaHawks', homeTeamScore: 112, awayTeamScore: 107, gameDate: '2020-02-08'])
+welcome2 = Team.where(id:1)
+welcome2.delete if team
+
+games = Game.create([ homeTeamName: "Philadelphia 76ers", awayTeamName: "Boston Celtics", gameWinnerId: 2, homeTeamScore: 94, awayTeamScore: 102, gameDate: "2020-08-21"])
+teams = Team.create([teamName: "Atlanta Hawks"])

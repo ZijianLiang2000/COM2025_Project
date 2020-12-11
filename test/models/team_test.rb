@@ -17,4 +17,25 @@ class TeamTest < ActiveSupport::TestCase
     assert team1.valid?
   end
 
+  test 'team can not be saved with no teamName' do
+    team1 = Team.new
+    team1.save
+    
+    refute team1.valid?
+  end
+  
+  test 'team can not be saved with duplicate teamName' do
+    team1 = Team.new
+    team1.teamName = "TestTeam1"
+    team1.save
+    
+    assert team1.valid?
+
+    team2 = Team.new
+    team2.teamName = "TestTeam1"
+    team2.save
+    
+    refute team2.valid?
+  end
+
 end
