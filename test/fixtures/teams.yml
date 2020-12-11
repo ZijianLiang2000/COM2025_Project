@@ -1,13 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
-  teamName: Atlanta Hawks
-  gamesPlayedId: 1
-  gamesToBePlayedId: 2
-
-two:
   id: 2
   teamName: Boston Celtics
-  gamesPlayedId: 1
-  gamesToBePlayedId: 2
+
+two:
+  id: 3
+  teamName: Philadelphia 76ers

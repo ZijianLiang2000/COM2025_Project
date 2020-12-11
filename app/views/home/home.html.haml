@@ -6,7 +6,7 @@
   #cover
     -#Inserting cover image 
     =image_tag 'C:\Sites\COM2025_Project\app\assets\images\HomeCover.png', :class => "img_class"
-
+  %br
   .container
     .row
       .col-lg-12.mt-5
@@ -18,5 +18,6 @@
               = label_tag :team, 'Search for an NBA team '
               = text_field_tag :team, nil, placeholder: 'Eg. Hawks', class: 'form-control'
             = button_tag 'Search', class: 'btn btn-success btn-block'
-          
+- 2.times do
+  %br
 

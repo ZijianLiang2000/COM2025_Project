@@ -1,17 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  homeTeamName: BostonCeltics
-  awayTeamName: AtlantaHawks
+  id: 1
+  homeTeamName: Philadelphia 76ers
+  awayTeamName: Boston Celtics
   gameWinnerId: 2
-  homeTeamScore: 109
-  awayTeamScore: 106
-  gameDate: 2020-01-04
+  homeTeamScore: 94
+  awayTeamScore: 102
+  gameDate: '2020-08-21'
 
 two:
-  homeTeamName: AtlantaHawks
-  awayTeamName: BostonCeltics
+  id: 2
+  homeTeamName: Philadelphia 76ers
+  awayTeamName: Boston Celtics
   gameWinnerId: 2
-  homeTeamScore: 115
-  awayTeamScore: 123
-  gameDate: 2020-02-04
+  homeTeamScore: 106
+  awayTeamScore: 110
+  gameDate: '2020-08-23'

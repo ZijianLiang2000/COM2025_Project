@@ -17,7 +17,7 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create team" do
     assert_difference('Team.count') do
-      post teams_url, params: { team: { teamName: @team.teamName } }
+      post teams_url, params: { team: { teamName: @team.teamName + "Test" } }
     end
 
     assert_redirected_to team_url(Team.last)
