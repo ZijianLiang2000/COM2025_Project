@@ -10,10 +10,11 @@ class TeamTest < ActiveSupport::TestCase
   end
 
   test 'team can be saved with no games' do
-    team = Team.new
-
-    team.save
-    assert team.valid?
+    team1 = Team.new
+    team1.teamName = "ExampleTeam"
+    team1.save
+    
+    assert team1.valid?
   end
 
 end

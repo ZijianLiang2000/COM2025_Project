@@ -6,9 +6,7 @@ class GameTest < ActiveSupport::TestCase
   # end
   setup do
     @game = games(:one)
-    @game2 = games(:one)
     @team = teams(:one)
-    @team2 = teams(:one)
   end
 
   test 'should not save empty game'do
@@ -19,29 +17,30 @@ class GameTest < ActiveSupport::TestCase
   end
 
   test 'should not save duplicated id'do
-  game1 = Game.new
-  team1 = Team.new
-  team1.teamName = @team.teamName
-  team1.save
-  
-  assert team1.valid?
+    game1 = Game.new
+    team1 = Team.new
+    team1.id = 4
+    team1.teamName = "Charlotte Hornets"
+    team1.save
+    
+    assert team1.valid?
 
-  game1.id = @game.id
-  game1.homeTeamName = @game.homeTeamName
-  game1.awayTeamName = @game.awayTeamName
-  game1.gameDate = @game.gameDate
-  game1.save
+    game1.id = 3
+    game1.homeTeamName = "Miami Heat"
+    game1.awayTeamName = "Boston Celtics"
+    game1.gameDate = "2020-04-12"
+    game1.save
 
-  assert game1.valid?
+    assert game1.valid?
 
-  game2 = Game.new
-  game2.id = @game1.id
-  game2.homeTeamName = @game2.homeTeamName
-  game2.awayTeamName = @game2.awayTeamName
-  game2.gameDate = @game2.awayTeamName
+    game2 = Game.new
+    game2.id = games(:two).id
+    game2.homeTeamName = games(:two).homeTeamName
+    game2.awayTeamName = games(:two).awayTeamName
+    game2.gameDate = games(:two).awayTeamName
 
-  game2.save
-  refute game2.valid?
-end
+    game2.save
+    refute game2.valid?
+  end
 
 end

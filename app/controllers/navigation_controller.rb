@@ -5,7 +5,7 @@ class NavigationController < ApplicationController
   def games
   end
 
-  def table
+  def teams
   end
 
   def contact

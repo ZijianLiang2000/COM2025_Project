@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   
   get 'contact', to:"contact#contact"
 
-  get 'navigation_home', to:"home#home", as: :link
+  get 'navigation_home', to:"home#home"
 
   get 'navigation_games', to:"games#index"
 
