@@ -1,13 +1,11 @@
 #timeTable
   %h1 
     =t('.title')
-
   - @games.each do |game|
     %table.table.table-striped
       %thead.thead-dark
         %tr
-          %th{:colspan => 5}=game.gameDate
-
+          %th{:colspan => 8}=game.gameDate
       %thead.thead-dark
         %tr    
           %th 
@@ -18,22 +16,21 @@
           %th
             =t('.awayTeamScore')
           %th
-            =t('.awayTeamName')          
+            =t('.awayTeamName')     
+               
           -# %th
           -# %th
 
       %tbody
-        %tr
-          %td= game.homeTeamName
-          -# %td= game.gameWinnerId
+        %tr{id: "game_#{game.id}"}
+          %td= link_to game.homeTeamName, team_path(:id => Team.find_by(teamName: game.homeTeamName).id)
           %td= game.homeTeamScore
           %td= ":"
           %td= game.awayTeamScore
-          %td= game.awayTeamName
-        %tr
-          %td{:colspan => 5}= link_to 'More', game
-          -# %td= link_to ' Edit ', edit_game_path(game)
-          -# %td= link_to ' Destroy ', game, method: :delete, data: { confirm: 'Are you sure?' }
+          %td= link_to game.awayTeamName, team_path(:id => Team.find_by(teamName: game.awayTeamName).id)
+          %td= link_to 'More', game
+          %td= link_to ' Edit ', edit_game_path(game)
+          %td= link_to ' Destroy ', game, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true
       %br
 
   = button_to 'New Game', new_game_path, :method => :get, :class => "btn btn-primary"
