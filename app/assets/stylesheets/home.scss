@@ -1,17 +1,8 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// #cover {
-//     border: 2px solid black;
-//     padding: 25px;
-//     background: url(app\assets\images\HomeCover.png);
-//     background-repeat: no-repeat;
-//     background-size: auto;
-//   }
 
 
-#home {
-}
 #home #cover .img_class{
     max-width: 100%;
     height: auto;
@@ -23,15 +14,13 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }#home h1,p{
+  } h1,p{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     text-align: center;
-  }#home div.col-lg-6{
+  }#homeSearch div.col-lg-6{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -39,24 +28,33 @@
     width:100%;
     height:300px;
     position:absolute;
-  }#home div.roster{
+  }#homeSearch div.container{
+    height: 30px;
+  }
+  #homeSearch div.roster{
     text-align: center;
     margin-left: 50%;
     display: block;
     width:40%;
-    height:200px;
+    height:80px;
 	  position: relative;
-    top: 170px;
-  }#home div.teamStandings{
+    top: 150px;
+  }#homeSearch div.teamStandings{
     display: block;
     text-align: center;
     margin-left: 30px;
     width:40%;
     margin-right: auto;
     position: relative;
-    top: 370px;
-  }#home div.logo{
+    top: 390px;
+  }#homeSearch div.logo{
     display: inline-block;
-    height: auto;
-    width: auto;
+    max-width: 130px;
+  }.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -1200px; /* the bottom margin is the negative value of the footer's height */
+  } .footer, .push {
+    height: 1200px; /* .push must be the same height as .footer */
   }

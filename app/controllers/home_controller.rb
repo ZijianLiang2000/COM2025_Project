@@ -9,6 +9,12 @@ class HomeController < ApplicationController
     )
   end
 
+  def find_team_by_ID(id)
+    request_api(
+      "https://api-nba-v1.p.rapidapi.com/teams/teamId/#{id}"
+    )
+  end
+
   
   # def seasonSearch
   #   @seasons = find_Season(@teamId)
@@ -24,8 +30,12 @@ class HomeController < ApplicationController
 
   def search
     # Teams will return requested api of "https://api-nba-v1.p.rapidapi.com/teams/nickName/Hornets"
-    teams = find_team(params[:team])
-
+    if params[:team] != "Trail Blazers"
+      teams = find_team(params[:team])
+    else
+      params[:blazersTeamID] = 29
+      teams = find_team_by_ID(params[:blazersTeamID])
+    end
     # unless teams
     #   flash[:alert] = 'Team not found'
     #   return render action: :home

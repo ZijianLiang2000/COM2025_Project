@@ -13,6 +13,7 @@ class TeamsController < ApplicationController
   def show
   end
 
+  
   # GET /teams/new
   def new
     @team = Team.new

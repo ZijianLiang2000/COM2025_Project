@@ -16,7 +16,9 @@
           = form_with(url: search_path, method: 'get', local: true) do
             .form-group
               = label_tag :team, 'Search for an NBA team '
-              = text_field_tag :team, nil, placeholder: 'Eg. Hawks', class: 'form-control'
+              -# = text_field_tag :team, nil, placeholder: 'Eg. Hawks', class: 'form-control'
+              = select_tag :team, options_for_select(['Hawks', 'Celtics','Nets', 'Hornets','Bulls', 'Cavaliers','Mavericks', 'Nuggets','Pistons', 'Warriors','Rockets', 'Pacers','Clippers', 'Lakers','Grizzlies', 'Heat','Bucks', 'Timberwolves','Pelicans', 'Knicks','Thunder', 'Magic','76ers', 'Suns','Trail Blazers', 'Kings','Spurs', 'Raptors', "Jazz", "Wizards"]), class: 'form-control'
+
             = button_tag 'Search', class: 'btn btn-success btn-block'
 - 2.times do
   %br

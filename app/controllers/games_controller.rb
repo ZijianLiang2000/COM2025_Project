@@ -12,6 +12,8 @@ class GamesController < ApplicationController
   def show
   end
 
+  
+
   # GET /games/new
   def new
     @game = Game.new
