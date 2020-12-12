@@ -1,9 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 2
-  teamName: Boston Celtics
+  id: 1
+  teamName: Atlanta Hawks
+  apiId: 1
 
 two:
-  id: 3
-  teamName: Philadelphia 76ers
+  id: 32
+  teamName: Guangzhou Lions
+  apiId: 12
+

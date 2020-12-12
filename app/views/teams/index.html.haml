@@ -10,7 +10,8 @@
       - @teams.each do |team|
         %tr
           .teamName
-            %td= team.teamName
+            -# %td= team.teamName
+            %td=link_to team.teamName, home_search_path(:linkToApiId => team.apiId)
           .linkTag
             %td= link_to 'Relavant Games', game_path(:id => Game.where(homeTeamName: team.teamName).or(Game.where(awayTeamName: team.teamName)).ids)
             %td= link_to 'Show', team

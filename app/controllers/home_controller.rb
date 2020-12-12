@@ -30,7 +30,9 @@ class HomeController < ApplicationController
 
   def search
     # Teams will return requested api of "https://api-nba-v1.p.rapidapi.com/teams/nickName/Hornets"
-    if params[:team] != "Trail Blazers"
+    if params[:linkToApiId] != nil
+      teams = find_team_by_ID(params[:linkToApiId])
+    elsif params[:team] != "Trail Blazers"
       teams = find_team(params[:team])
     else
       params[:blazersTeamID] = 29

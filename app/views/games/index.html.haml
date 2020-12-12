@@ -23,11 +23,11 @@
 
       %tbody
         %tr{id: "game_#{game.id}"}
-          %td= link_to game.homeTeamName, team_path(:id => Team.find_by(teamName: game.homeTeamName).id)
+          %td= link_to game.homeTeamName, home_search_path(:linkToApiId => Team.find_by(teamName: game.homeTeamName))
           %td= game.homeTeamScore
           %td= ":"
           %td= game.awayTeamScore
-          %td= link_to game.awayTeamName, team_path(:id => Team.find_by(teamName: game.awayTeamName).id)
+          %td= link_to game.awayTeamName, home_search_path(:linkToApiId => Team.find_by(teamName: game.awayTeamName))
           %td= link_to 'More', game
           %td= link_to ' Edit ', edit_game_path(game)
           %td= link_to ' Destroy ', game, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true

@@ -10,6 +10,8 @@
     .field
       = f.label t('.teamName')
       = f.text_field :teamName, class:"form-control"
+      = f.label t('.apiId')
+      = f.number_field :apiId, class:"form-control"
     .actions
       = f.submit 'Save', class: "btn btn-primary"
 

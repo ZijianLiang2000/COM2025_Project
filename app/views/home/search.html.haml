@@ -2,40 +2,49 @@
   #homeSearch
     %section.jumbotron.text-center
       .container
+        .logo
+          =image_tag(@team['logo'])
         %h1.jumbotron-heading
-          Team Standings
+          =@team['fullName']
         %dl
-          %dt Team
-          %dd= @team['fullName']
           %dt Team ID
-          %dd= @team['teamId']
+          %dd= Team.find_by(teamName: @team['fullName']).id
           %dt NBA Franchise
           %dd= @team['nbaFranchise']
-          %dt LOGO
-          .logo
-            =link_to image_tag(@team['logo'])
-        
-      .teamStandings
-        %h1.jumbotron-heading
-          Team Standings
-        %h4
-          -# Wanted to store team ID as a variable ':teamId' and pass it to controller to use, but unsuccessful
-          -# %a{ href: "seasonSearch", :teamId => @team['teamId']} Season #{@year} 
-          Season #{@year} 
-        %dl 
-          %dt Win
-          %dd= @teamStandings["api"]["standings"][0]["win"]
-          %dt Loss
-          %dd= @teamStandings["api"]["standings"][0]["loss"]
-          %dt Conference: #{@teamStandings["api"]["standings"][0]["conference"]["name"]}
-          %dd= "Ranking: #{@teamStandings["api"]["standings"][0]["conference"]["rank"]}"
-      .roster
-        %h1.jumbotron-heading Roster
-        %h4 Player Name
-        %dl
-          - @player["api"]['players'].each do |player|
-            %dt
-              #{player['firstName']} #{player['lastName']} (Position: #{player['leagues'].first[1]["pos"]}, ##{player['leagues'].first[1]["jersey"]})
+    .teamStandings
+      %h1.jumbotron-heading
+        Team Standings
+      %h4
+        -# Wanted to store team ID as a variable ':teamId' and pass it to controller to use, but unsuccessful
+        -# %a{ href: "seasonSearch", :teamId => @team['teamId']} Season #{@year} 
+        Season #{@year} 
+      %dl 
+        %dt Win
+        %dd= @teamStandings["api"]["standings"][0]["win"]
+        %dt Loss
+        %dd= @teamStandings["api"]["standings"][0]["loss"]
+        %dt Conference: #{@teamStandings["api"]["standings"][0]["conference"]["name"]}
+        %dd= "Ranking: #{@teamStandings["api"]["standings"][0]["conference"]["rank"]}"
+        %dt Win Percentage:
+        %dd= @teamStandings["api"]["standings"][0]["winPercentage"]
+        %dt Loss Percentage:
+        %dd= @teamStandings["api"]["standings"][0]["lossPercentage"]
+        %dt Games Behind:
+        %dd= @teamStandings["api"]["standings"][0]["gamesBehind"]
+        %dt Last Ten Win:
+        %dd= @teamStandings["api"]["standings"][0]["lastTenWin"]
+        %dt Last Ten Loss:
+        %dd= @teamStandings["api"]["standings"][0]["lastTenLoss"]
+        %dt Win Streak:
+        %dd= @teamStandings["api"]["standings"][0]["winStreak"]
+
+    .roster
+      %h1.jumbotron-heading Roster
+      %h4 Player Name
+      %dl
+        - @player["api"]['players'].each do |player|
+          %dt
+            #{player['firstName']} #{player['lastName']} (Position: #{player['leagues'].first[1]["pos"]}, ##{player['leagues'].first[1]["jersey"]})
   .push
 .footer
               

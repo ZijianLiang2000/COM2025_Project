@@ -35,8 +35,9 @@ class GameTest < ActiveSupport::TestCase
   test 'should not save duplicated id'do
     game1 = Game.new
     team1 = Team.new
-    team1.id = 4
+    team1.id = 40
     team1.teamName = "Charlotte Hornets"
+    team1.apiId = 65
     team1.save
     
     assert team1.valid?
@@ -58,16 +59,5 @@ class GameTest < ActiveSupport::TestCase
     game2.save
     refute game2.valid?
   end
-
-  # test 'should not save game with invalid homeTeam name'do
-  # game1 = Game.new
-
-  # team1 = Team.new
-  # team1.id = 4
-  # team1.teamName = "Charlotte Hornets"
-  # team1.save
-
-  
-  # end
 
 end

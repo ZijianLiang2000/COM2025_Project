@@ -29,24 +29,21 @@
     height:300px;
     position:absolute;
   }#homeSearch div.container{
-    height: 30px;
+    height: 30%;
   }
   #homeSearch div.roster{
     text-align: center;
-    margin-left: 50%;
+    margin: auto;
     display: block;
     width:40%;
-    height:80px;
 	  position: relative;
-    top: 150px;
   }#homeSearch div.teamStandings{
     display: block;
     text-align: center;
-    margin-left: 30px;
+    margin: auto;
     width:40%;
     margin-right: auto;
     position: relative;
-    top: 390px;
   }#homeSearch div.logo{
     display: inline-block;
     max-width: 130px;
@@ -54,7 +51,7 @@
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -1200px; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 auto -100px; /* the bottom margin is the negative value of the footer's height */
   } .footer, .push {
-    height: 1200px; /* .push must be the same height as .footer */
+    height: 100px; /* .push must be the same height as .footer */
   }

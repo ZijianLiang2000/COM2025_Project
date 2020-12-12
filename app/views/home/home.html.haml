@@ -13,7 +13,7 @@
         -# - if flash[:alert]
         -#   .alert.alert-warning= flash[:alert]
         .mx-auto{:style => "width: 400px"}
-          = form_with(url: search_path, method: 'get', local: true) do
+          = form_with(url: home_search_path, method: 'get', local: true) do
             .form-group
               = label_tag :team, 'Search for an NBA team '
               -# = text_field_tag :team, nil, placeholder: 'Eg. Hawks', class: 'form-control'
