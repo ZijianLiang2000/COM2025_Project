@@ -12,6 +12,7 @@
           .teamName
             %td= team.teamName
           .linkTag
+            %td= link_to 'Relavant Games', game_path(:id => Game.where(homeTeamName: team.teamName).or(Game.where(awayTeamName: team.teamName)).ids)
             %td= link_to 'Show', team
             %td= link_to 'Edit', edit_team_path(team)
             %td= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' }
