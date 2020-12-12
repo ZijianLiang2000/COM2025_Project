@@ -22,6 +22,15 @@ Rails.application.routes.draw do
   get 'teams/:id/navigation_games' => 'games#index'
   get 'teams/:id/navigation_teams' => "teams#index"
   get 'teams/:id/navigation_contact' => 'contact#contact'
+
+  get 'users/navigation_home' => 'home#home'
+  get 'users/navigation_games' => 'games#index'
+  get 'users/navigation_teams' => 'teams#index'
+  get 'users/navigation_contact' => 'contact#contact'
+  get 'users/:id/navigation_home' => 'home#home'
+  get 'users/:id/navigation_games' => 'games#index'
+  get 'users/:id/navigation_teams' => "teams#index"
+  get 'users/:id/navigation_contact' => 'contact#contact'
   
   resources :teams
   resources :games

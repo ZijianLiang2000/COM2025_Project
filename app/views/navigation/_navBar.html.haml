@@ -2,7 +2,9 @@
 
 
 - flash.each do |key, value|
-  = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
+  .alert.alert-warning
+    = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
+
 %ul
   %li
     %a.logo{:href => "#"}
@@ -15,16 +17,19 @@
     %a{:href => "navigation_teams"} Teams
   %li
     %a{:href => "navigation_contact"} Contact
-  %li
-    - if user_signed_in?
-      %li
-        = "#{current_user.email} |"
-        = link_to t('profile'), edit_user_registration_path
-      %li
-        = link_to t('logout'), destroy_user_session_path, method: 'delete'
-    - else
-      %li
-        = link_to t('login'), new_user_session_path
-      %li
-        = link_to t('sign_up'), new_user_registration_path
+  #user
+    %li
+      - if user_signed_in?
+        %li
+          .userEmail
+            = current_user.email
+        %li
+          = link_to t('profile'), edit_user_registration_path
+        %li
+          = link_to t('logout'), destroy_user_session_path, method: 'delete'
+      - else
+        %li
+          = link_to t('login'), new_user_session_path
+        %li
+          = link_to t('sign_up'), new_user_registration_path
 

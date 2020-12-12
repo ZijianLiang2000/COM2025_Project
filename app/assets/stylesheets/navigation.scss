@@ -123,4 +123,15 @@ footer .footer-links li
 .copyright-text
 {
   margin:0
+} #user .userEmail{
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  transition: 230ms;
+  padding: 14px 16px;
+  text-decoration: none;
+} #user {
+  float: right;
+  display: block;
 }
