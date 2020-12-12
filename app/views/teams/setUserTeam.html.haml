@@ -1,0 +1,12 @@
+#setUserTeam
+    .wrapper
+        =image_tag ('https://wreg.com/wp-content/uploads/sites/18/2020/01/hypatia-h_befb7026c7f476912a7a8a09709f1d76-h_d40ec2928d0caa702e8275cdd8419ffa.jpg?w=1600&h=900&crop=1'), :class => "img_class"
+        %br
+        %br
+        %p Do you want to subscribe to: #{params[:team]}
+        = button_to 'Subscribe', team_showUserTeam_path, :method => :get, class: "btn btn-primary"
+        %br
+        %br
+        .push
+    .footer
+

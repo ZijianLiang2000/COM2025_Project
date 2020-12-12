@@ -1,16 +1,24 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: [:show, :edit, :update, :destroy]
+  before_action :set_team, :setUserTeam, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   # GET /teams
   # GET /teams.json
   def index
     @teams = Team.all
-
   end
 
   # GET /teams/1
   # GET /teams/1.json
   def show
+  end
+
+  def setUserTeam
+    current_user.team_ids = params[:currentTeamId]
+  end
+
+  def showUserTeam
+    # @oldIds = 
+    @userTeams = current_user.teams
   end
 
   
@@ -27,6 +35,7 @@ class TeamsController < ApplicationController
   # POST /teams.json
   def create
     @team = Team.new(team_params)
+    @team.user = current_user
 
     respond_to do |format|
       if @team.save

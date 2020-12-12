@@ -134,4 +134,11 @@ footer .footer-links li
 } #user {
   float: right;
   display: block;
+} #nav img{
+    height: 45px;
+    width: auto\9; /* ie8 */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px 16px;
 }

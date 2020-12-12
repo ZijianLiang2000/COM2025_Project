@@ -18,4 +18,32 @@
 
     text-align: center;
     display: block;
-}
+}#showUserTeam .wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -80px; /* the bottom margin is the negative value of the footer's height */
+  }#showUserTeam .footer,#showUserTeam .push {
+    height: 80px; /* .push must be the same height as .footer */
+  }#showUserTeam .img_class{
+    margin-top: 50px;
+    max-width: 100%;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }#setUserTeam .wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -162px; /* the bottom margin is the negative value of the footer's height */
+  }#setUserTeam .footer,#setUserTeam .push {
+    height: 162px; /* .push must be the same height as .footer */
+  }#setUserTeam .img_class{
+    margin-top: 50px;
+    max-width: 100%;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }

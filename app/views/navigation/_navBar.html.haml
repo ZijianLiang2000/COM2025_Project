@@ -1,35 +1,35 @@
-%nav
+#nav
+  - flash.each do |key, value|
+    .alert.alert-danger
+      = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
 
-
-- flash.each do |key, value|
-  .alert.alert-warning
-    = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
-
-%ul
-  %li
-    %a.logo{:href => "#"}
-      %img{:alt => "", :src => "app\\assets\\images\\LOGO.png"}/
-  %li
-    %a.default{:href => "navigation_home"} Home
-  %li
-    %a{:href => "navigation_games"} Games
-  %li
-    %a{:href => "navigation_teams"} Teams
-  %li
-    %a{:href => "navigation_contact"} Contact
-  #user
+  %ul
     %li
-      - if user_signed_in?
-        %li
-          .userEmail
-            = current_user.email
-        %li
-          = link_to t('profile'), edit_user_registration_path
-        %li
-          = link_to t('logout'), destroy_user_session_path, method: 'delete'
-      - else
-        %li
-          = link_to t('login'), new_user_session_path
-        %li
-          = link_to t('sign_up'), new_user_registration_path
+      .logo{:href => "#"}
+        %img{:alt => "", :src => "https://pngimg.com/uploads/nba/nba_PNG6.png"}/
+    %li
+      %a.default{:href => "navigation_home"} Home
+    %li
+      %a{:href => "navigation_games"} Games
+    %li
+      %a{:href => "navigation_teams"} Teams
+    %li
+      %a{:href => "navigation_contact"} Contact
+    %li
+      %a{:href => "team_showUserTeam"} Subscribtion
+    #user
+      %li
+        - if user_signed_in?
+          %li
+            .userEmail
+              = current_user.email
+          %li
+            = link_to t('profile'), edit_user_registration_path
+          %li
+            = link_to t('logout'), destroy_user_session_path, method: 'delete'
+        - else
+          %li
+            = link_to t('login'), new_user_session_path
+          %li
+            = link_to t('sign_up'), new_user_registration_path
 
