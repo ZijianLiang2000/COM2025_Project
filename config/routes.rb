@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
-
+  
+  devise_for :users
+  
   # These are routes for navigation bar to work under game layer
   # which occurs during rendering 'Show' or 'New' views for games object
   get 'games/navigation_home' => 'home#home'
@@ -39,6 +41,7 @@ Rails.application.routes.draw do
   get 'navigation_contact', to:"contact#contact"
 
   get 'home_search' => 'home#search'
+
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

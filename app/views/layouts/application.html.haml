@@ -22,9 +22,9 @@
     = csrf_meta_tags
 
   %body
-    - flash.each do |key, value|
-      .alert.alert-warning
-        = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
+    -# - flash.each do |key, value|
+    -#   .alert.alert-warning
+    -#     = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
     = render partial: "navigation/navBar"
     = yield
     = render partial: "navigation/footer"
