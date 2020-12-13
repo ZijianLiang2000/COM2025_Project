@@ -54,4 +54,11 @@ class GamesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to games_url
   end
+
+  test "should show team game" do
+    get game_showTeamGames_path(:teamIdToFindGames => 1)
+    assert_response :success
+  end
+
+  
 end

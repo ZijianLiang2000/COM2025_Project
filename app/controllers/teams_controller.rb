@@ -12,6 +12,7 @@ class TeamsController < ApplicationController
   def show
   end
 
+  # Controller for API request for RapidAPI
   def request_api(url)
     response = Excon.get(
       url,
@@ -28,21 +29,25 @@ class TeamsController < ApplicationController
     JSON.parse(response.body)
   end
 
+  # Controller to find a team by its apiID for RapidAPI
   def find_team_by_ID(apiId)
     request_api(
       "https://api-nba-v1.p.rapidapi.com/teams/teamId/#{apiId}"
     )
   end
 
+  # Controller to set Current User to subscribe to a team
   def setUserTeam
     current_user.team_ids = params[:currentTeamId]
   end
-
+  # Controller to set Current User to cancel subscription to a team
   def cancelUserTeam
     current_user.team_ids = nil
   end
 
+  # Controller to show Current User's team subscription
   def showUserTeam
+    # If user has a team subscribed
     if current_user.teams.first != nil
       @userTeamApiId = current_user.teams.first.apiId
       teams = find_team_by_ID(@userTeamApiId)

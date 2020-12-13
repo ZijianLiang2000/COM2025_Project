@@ -49,4 +49,10 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to teams_url
   end
+
+  test "should show show user team" do
+    get team_showUserTeam_path
+    assert_response :success
+  end
+
 end
