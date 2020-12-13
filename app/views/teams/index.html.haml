@@ -8,7 +8,6 @@
         %th
         %th Actions
         %th
-        %th
 
     %tbody
       - @teams.each do |team|
@@ -19,8 +18,6 @@
           .linkTag
             %td= link_to 'Subscribe', team_setUserTeam_path(:currentTeamName => team.teamName, :currentTeamId => team.id) 
             %td= link_to 'Relavant Games', game_showTeamGames_path(:teamIdToFindGames => team.id)
-            -# %td= link_to 'Show', team
-            -# %td= link_to 'Edit', edit_team_path(team)
             %td= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' }
 
   %br

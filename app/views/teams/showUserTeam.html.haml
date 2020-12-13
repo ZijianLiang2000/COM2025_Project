@@ -11,8 +11,10 @@
 
             -# %p= button_to "Available Teams", navigation_teams_path, :method => :get, class: "btn btn-primary"
           - else
-            =image_tag ('https://i.pinimg.com/originals/24/86/51/2486517534aa0b0d175c18c343e50d82.jpg'), :class => "img_class"
+
             - @userTeams.each do |team|
+              =image_tag (@team['logo']), :class => "img_class"
+              %br
               .teamName
                 %th{:colspan => 3} Subscribed to: &nbsp #{team.teamName}
               .linkTag

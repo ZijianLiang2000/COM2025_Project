@@ -12,6 +12,28 @@ class TeamsController < ApplicationController
   def show
   end
 
+  def request_api(url)
+    response = Excon.get(
+      url,
+      headers: {
+        'X-RapidAPI-Host' => URI.parse(url).host,
+        # 'X-RapidAPI-Key' => ENV.fetch('RAPIDAPI_API_KEY')
+        'X-RapidAPI-Key' => '81f17623camshd2b99a09f5ec7b9p1cf6aejsn282365a0a05e'
+        # KEY is: 81f17623camshd2b99a09f5ec7b9p1cf6aejsn282365a0a05e
+      }
+    )
+
+    return nil if response.status != 200
+
+    JSON.parse(response.body)
+  end
+
+  def find_team_by_ID(apiId)
+    request_api(
+      "https://api-nba-v1.p.rapidapi.com/teams/teamId/#{apiId}"
+    )
+  end
+
   def setUserTeam
     current_user.team_ids = params[:currentTeamId]
   end
@@ -21,7 +43,9 @@ class TeamsController < ApplicationController
   end
 
   def showUserTeam
-    # @oldIds = 
+    @userTeamApiId = current_user.teams.first.apiId
+    teams = find_team_by_ID(@userTeamApiId)
+    @team = teams["api"]["teams"].first
     @userTeams = current_user.teams
   end
 

@@ -52,6 +52,8 @@ GEM
     arel (8.0.0)
     bcrypt (3.1.16)
     bindex (0.8.1)
+    bootstrap-icons (1.0.4)
+      nokogiri (~> 1.6)
     bootstrap-sass (3.2.0.4)
       sass (~> 3.2)
     builder (3.2.4)
@@ -219,6 +221,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-import
+  bootstrap-icons (~> 1.0)
   bootstrap-sass (~> 3.2.0)
   byebug
   capybara (>= 2.15)
@@ -240,4 +243,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   2.1.4
+   2.2.0
