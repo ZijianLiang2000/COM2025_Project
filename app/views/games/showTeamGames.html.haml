@@ -1,0 +1,38 @@
+#showTeamGames
+    %table.table.table-striped
+        %tbody
+        %tr
+            - @teamGames.each do |game|
+                %table.table.table-striped
+                    %thead.thead-dark
+                        %tr
+                        %th{:colspan => 8}=game.gameDate
+                    %thead.thead-dark
+                        %tr    
+                        %th 
+                            =t('.homeTeamName')
+                        %th
+                            =t('.homeTeamScore')
+                        %th
+                        %th
+                            =t('.awayTeamScore')
+                        %th
+                            =t('.awayTeamName')     
+                            
+                        -# %th
+                        -# %th
+
+                    %tbody
+                        %tr{id: "game_#{game.id}"}
+                        %td= link_to game.homeTeamName, home_search_path(:linkToApiId => Team.find_by(teamName: game.homeTeamName))
+                        %td= game.homeTeamScore
+                        %td= ":"
+                        %td= game.awayTeamScore
+                        %td= link_to game.awayTeamName, home_search_path(:linkToApiId => Team.find_by(teamName: game.awayTeamName))
+                        %td= link_to 'More', game
+                        %td= link_to ' Edit ', edit_game_path(game)
+                        %td= link_to ' Destroy ', game, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true
+                    %br
+            %br
+            %br
+            %br

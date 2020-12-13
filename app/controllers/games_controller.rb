@@ -12,7 +12,9 @@ class GamesController < ApplicationController
   def show
   end
 
-  
+  def showTeamGames
+    @teamGames = Team.find(params[:teamIdToFindGames]).games
+  end
 
   # GET /games/new
   def new

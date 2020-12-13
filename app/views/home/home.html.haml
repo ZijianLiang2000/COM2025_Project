@@ -10,8 +10,6 @@
   .container
     .row
       .col-lg-12.mt-5
-        -# - if flash[:alert]
-        -#   .alert.alert-warning= flash[:alert]
         .mx-auto{:style => "width: 400px"}
           = form_with(url: home_search_path, method: 'get', local: true) do
             .form-group
