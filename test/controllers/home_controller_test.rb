@@ -1,6 +1,14 @@
 require 'test_helper'
 
 class HomeControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+  
+  setup do
+    get '/users/sign_in'
+    sign_in users(:one)
+    post user_session_url
+  end
+
   test "should get home" do
     get root_path
     assert_response :success
@@ -31,8 +39,9 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
       {name: "Matthew", email: "matthew@me.com", nbaPassCode: "1104777236",
        telephone: "1234567890", message: "Hello"}
     assert_response :redirect
-    assert_nil flash[:alert]
+    assert_not_nil flash[:alert]
     assert_not_empty flash[:notice]
+
 
   end
   

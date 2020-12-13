@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class TeamsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @team = teams(:one)
+    get '/users/sign_in'
+    sign_in users(:one)
+    post user_session_url
   end
 
   test "should get index" do
