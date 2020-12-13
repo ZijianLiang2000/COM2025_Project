@@ -16,6 +16,10 @@ class TeamsController < ApplicationController
     current_user.team_ids = params[:currentTeamId]
   end
 
+  def cancelUserTeam
+    current_user.team_ids = nil
+  end
+
   def showUserTeam
     # @oldIds = 
     @userTeams = current_user.teams

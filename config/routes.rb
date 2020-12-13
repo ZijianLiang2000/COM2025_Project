@@ -64,11 +64,12 @@ Rails.application.routes.draw do
 
   get 'home_search' => 'home#search'
 
-  get 'teams_Index' => 'teams#index'
 
   get 'team_showUserTeam' => 'teams#showUserTeam'
 
   get 'team_setUserTeam' => 'teams#setUserTeam'
+
+  get 'team_cancelUserTeam' => 'teams#cancelUserTeam'
 
   get "/userEdit" => "devise/registrations#edit"
   

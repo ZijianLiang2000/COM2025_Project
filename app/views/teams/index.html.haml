@@ -17,10 +17,10 @@
             -# %td= team.teamName
             %td=link_to team.teamName, home_search_path(:linkToApiId => team.apiId)
           .linkTag
-            %td= link_to 'Subscribe', team_setUserTeam_path(:team => team.teamName, :currentTeamId => team.id) 
+            %td= link_to 'Subscribe', team_setUserTeam_path(:currentTeamName => team.teamName, :currentTeamId => team.id) 
             %td= link_to 'Games', game_path(:id => Game.where(homeTeamName: team.teamName).or(Game.where(awayTeamName: team.teamName)).ids)
-            %td= link_to 'Show', team
-            %td= link_to 'Edit', edit_team_path(team)
+            -# %td= link_to 'Show', team
+            -# %td= link_to 'Edit', edit_team_path(team)
             %td= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' }
 
   %br
