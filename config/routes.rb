@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  
-  
   devise_for :users
   
   # These are routes for navigation bar to work under game layer
@@ -72,6 +70,6 @@ Rails.application.routes.draw do
   get 'team_cancelUserTeam' => 'teams#cancelUserTeam'
 
   get "game_showTeamGames" => "games#showTeamGames"
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
