@@ -43,9 +43,12 @@ class TeamsController < ApplicationController
   end
 
   def showUserTeam
-    @userTeamApiId = current_user.teams.first.apiId
-    teams = find_team_by_ID(@userTeamApiId)
-    @team = teams["api"]["teams"].first
+    if current_user.teams.first != nil
+      @userTeamApiId = current_user.teams.first.apiId
+      teams = find_team_by_ID(@userTeamApiId)
+      @team = teams["api"]["teams"].first
+    end
+    
     @userTeams = current_user.teams
   end
 
