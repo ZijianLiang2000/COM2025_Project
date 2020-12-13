@@ -11,30 +11,11 @@ class HomeController < ApplicationController
     )
   end
 
-  def find_team_by_ID(id)
-    
-    apiHash = {"1" => "1", "2" => "2", "3" => "4",
-       "5" => "6", "6" => "7", "7" => "8", "8" => "9",
-        "9" => "10", "10" => "11", "11" => "14", "12" => "15",
-         "13" => "16", "14" => "17", "15" => "19","16" => "20",
-          "17" => "21", "18" => "22", "19" => "23", "20" => "24",
-           "21" => "25", "22" => "26", "23" => "27", "24" => "28",
-            "25" => "29", "26" => "30", "27" => "31", "28" => "38",
-             "29" => "40", "30" => "41"}
-    apiId = apiHash[id]
+  def find_team_by_ID(apiId)
     request_api(
       "https://api-nba-v1.p.rapidapi.com/teams/teamId/#{apiId}"
     )
   end
-
-  
-  # def seasonSearch
-  #   @seasons = find_Season(@teamId)
-  # end
-
-  # def find_Season(team_id)
-  #   request_api("https://api-nba-v1.p.rapidapi.com/games/teamId/#{team_id}") 
-  # end
 
   def find_PlayerID(playerId)
     request_api("https://api-nba-v1.p.rapidapi.com/players/playerId/#{playerId}") 

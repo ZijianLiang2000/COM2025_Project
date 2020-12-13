@@ -62,6 +62,8 @@ Rails.application.routes.draw do
 
   get 'home_search' => 'home#search'
 
+  get 'users_contact' => 'contact#contact'
+
 
   get 'team_showUserTeam' => 'teams#showUserTeam'
 

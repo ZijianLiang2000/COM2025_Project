@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default to: "info@mynotes.com", from: "info@mynotes.com"
+  default to: "infoReceiver@gmail.com", from: "infoSender@gmail.com"
   layout 'mailer'
 end

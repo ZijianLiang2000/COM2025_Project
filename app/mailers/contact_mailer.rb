@@ -7,6 +7,13 @@ class ContactMailer < ApplicationMailer
         @telephone = telephone
         @message = message
 
-        mail cc: @email
+        mail cc: "#{@email}+#{@name}+#{@nbaPassCode}+#{@telephone}+#{@message}"
+        # mail to: "infoReceiver@gmail.com"
+        # mail from: 'infoSender@gmail.com'
+        # mail email: @email
+        # mail name: @name
+        # mail nbaPassCode: @nbaPassCode
+        # mail telephone: @telephone
+        # mail message: @message
     end
 end
