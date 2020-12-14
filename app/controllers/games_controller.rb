@@ -1,10 +1,12 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  GAMES_PER_PAGE = 10
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+    @page = params.fetch(:page, 0).to_i
+    @games = Game.offset(@page * GAMES_PER_PAGE).limit(GAMES_PER_PAGE)
   end
 
   # GET /games/1

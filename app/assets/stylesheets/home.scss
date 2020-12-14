@@ -35,7 +35,11 @@
     display: block;
     width:40%;
 	  position: relative;
-  }#homeSearch div.teamStandings{
+  }#homeSearch td{
+    text-align: center;
+    margin: auto;
+  }
+  #homeSearch div.teamStandings{
     display: block;
     text-align: center;
     margin: auto;
@@ -52,4 +56,9 @@
     margin: 0 auto -100px; /* the bottom margin is the negative value of the footer's height */
   } .footer, .push {
     height: 100px; /* .push must be the same height as .footer */
+  } .teamRosterHeader{
+    font-weight: bolder;
+  } .card-body{
+    border: aliceblue;
+    border-width: 10px;
   }

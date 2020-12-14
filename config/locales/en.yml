@@ -30,14 +30,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  app_title: NBA League Passthrough
+  app_title: NBA League Forum
   app_description: A website to follow-up all NBA statistics, teams fixtures and points
 
   home:
     home:
-      title: NBA League Passthrough
+      title: NBA League Forum
       welcome: welcome to this website to follow-up all NBA statistics, teams fixtures and points
-  
+    search:
+      playerName: Player Name
+      position: Position
+      jerseyNumber: Jersey Number
+
   contact:
     contact:
       contactTitle: "Contact Form"

@@ -20,8 +20,8 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
 
     assert_template layout: 'application'
 
-    assert_select 'title', 'NBA League Passthrough'
-    assert_select 'h1', 'Contact Page'
+    assert_select 'title', 'NBA League Forum'
+    assert_select 'h1', 'Contact Form'
 
   end
   
@@ -41,7 +41,6 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     assert_not_nil flash[:alert]
     assert_not_empty flash[:notice]
-
 
   end
   

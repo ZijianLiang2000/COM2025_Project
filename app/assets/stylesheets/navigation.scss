@@ -60,6 +60,7 @@
   color:#ffffff;
   position: relative;
   bottom: 0;
+  left: 0;
   width: 100%;
 }
 .site-footer hr
@@ -109,20 +110,6 @@ footer .footer-links li
 .footer-links.inline li
 {
   display:inline-block
-}
-.site-footer .social-icons
-{
-  text-align:right
-}
-.site-footer .social-icons a
-{
-  width:40px;
-  height:40px;
-  line-height:40px;
-  margin-left:6px;
-  margin-right:0;
-  border-radius:100%;
-  background-color:#33353d
 }
 .copyright-text
 {

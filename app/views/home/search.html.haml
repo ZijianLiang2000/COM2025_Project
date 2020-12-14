@@ -39,12 +39,20 @@
         %dd= @teamStandings["api"]["standings"][0]["winStreak"]
 
     .roster
-      %h1.jumbotron-heading Roster
-      %h4 Player Name
-      %dl
+      %table.table.table-striped
+        %thead.thead-dark
+          %tr
+            .teamRosterHeader
+              %td=t(".playerName")
+              %td=t(".position")
+              %td=t(".jerseyNumber")
         - @player["api"]['players'].each do |player|
-          %dt
-            #{player['firstName']} #{player['lastName']} (Position: #{player['leagues'].first[1]["pos"]}, ##{player['leagues'].first[1]["jersey"]})
+          %tbody
+            %tr
+              %td #{player['firstName']} #{player['lastName']}
+              %td #{player['leagues'].first[1]["pos"]}
+              %td ##{player['leagues'].first[1]["jersey"]}
+
   .push
 .footer
               

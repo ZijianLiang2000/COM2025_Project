@@ -24,14 +24,14 @@
 
                     %tbody
                         %tr{id: "game_#{game.id}"}
-                        %td= link_to game.homeTeamName, home_search_path(:linkToApiId => Team.find_by(teamName: game.homeTeamName))
+                        %td= link_to game.homeTeamName, home_search_path(:linkToApiId => Team.find_by(teamName: game.homeTeamName)), class: "btn btn-primary"
                         %td= game.homeTeamScore
                         %td= ":"
                         %td= game.awayTeamScore
-                        %td= link_to game.awayTeamName, home_search_path(:linkToApiId => Team.find_by(teamName: game.awayTeamName))
-                        %td= link_to 'More', game
-                        %td= link_to ' Edit ', edit_game_path(game)
-                        %td= link_to ' Destroy ', game, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true
+                        %td= link_to game.awayTeamName, home_search_path(:linkToApiId => Team.find_by(teamName: game.awayTeamName)), class: "btn btn-primary"
+                        %td= link_to 'More', game, class: "btn btn-success"
+                        %td= link_to ' Edit ', edit_game_path(game), class: "btn btn-warning"
+                        %td= link_to ' Destroy ', game, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, class: "btn btn-danger"
                     %br
             %br
             %br

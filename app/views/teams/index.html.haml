@@ -3,15 +3,15 @@
 
   %table.table.table-striped
     %thead.thead-dark
-    %tbody
-      - @teams.each do |team|
-        %tr
-          .teamName
-            %td=link_to team.teamName, home_search_path(:linkToApiId => team.apiId)
-          .linkTag
-            %td= link_to 'Subscribe', team_setUserTeam_path(:currentTeamName => team.teamName, :currentTeamId => team.id) , class: "btn btn-success"
-            %td= link_to 'Relavant Games', game_showTeamGames_path(:teamIdToFindGames => team.id), class: "btn btn-primary"
-            %td= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"
+      %tbody
+        - @teams.each do |team|
+          %tr
+            .teamName
+              %td=link_to team.teamName, home_search_path(:linkToApiId => team.apiId)
+            .linkTag
+              %td= link_to 'Subscribe', team_setUserTeam_path(:currentTeamName => team.teamName, :currentTeamId => team.id) , class: "btn btn-success"
+              %td= link_to 'Relavant Games', game_showTeamGames_path(:teamIdToFindGames => team.id), class: "btn btn-primary"
+              %td= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"
 
   %br
 
