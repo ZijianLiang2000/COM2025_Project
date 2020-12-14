@@ -1,6 +1,7 @@
 %div.background
     %div.box
-        %h1 Contact Page
+        .contactTitle
+            %h1=t('.contactTitle')
 
     = form_tag request_contact_path, method: 'post' do
         = label_tag :name, t('.name')

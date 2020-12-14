@@ -5,7 +5,8 @@
     width: 500px;
     margin: auto;
     border: darkslategrey;
-}#teamsTable table .teamName{
+}#teamsTable table td{
+    font-weight: bolder;
     text-align: center;
     margin: 100px;
     vertical-align: middle;

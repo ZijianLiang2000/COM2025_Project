@@ -40,6 +40,7 @@ en:
   
   contact:
     contact:
+      contactTitle: "Contact Form"
       name: "Name:"
       enter_name: Enter your name
       email: "Email:"
@@ -91,3 +92,25 @@ en:
     form:
       teamName: "Team Name"
       apiId: "API ID"
+    cancelUserTeam:
+      unsubscribeMessage: "The team is now unsubscribed"
+      confirm: "OK"
+  
+  navigation:
+    navBar:
+      home: Home
+      games: Games
+      teams: Teams
+      contact: Contact
+      subscription: Subscription
+      profile: Profile
+      logout: Logout
+      login: Login
+      sign_up: Signup
+    footer:
+      about: Website to follow-up all NBA statistics, teams fixtures and points. Including all games recently available in the playoffs, and all teams are ready for your subscription.
+      games: Games
+      teams: Teams
+      university_site: University of Surrey
+      contact_us: Contact
+  

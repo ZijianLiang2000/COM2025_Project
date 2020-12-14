@@ -25,6 +25,17 @@
     .field
       .date
         = f.label t('.gameDate')
-        = f.date_select :gameDate
+        -# = f.date_select :gameDate
+        = f.text_field :gameDate, hide_label: true, class: 'datepicker'
+        :javascript
+          $(document).ready(function(){
+            $('.datepicker').datepicker({
+              todayHighlight: true,
+              orientation: 'auto top',
+              format: 'yyyy-mm-dd'
+              });
+              });
+
+
     .actions
       = f.submit 'Save', class: "btn btn-primary"
