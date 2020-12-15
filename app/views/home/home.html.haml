@@ -1,23 +1,25 @@
+-# Home page for website after logging in, includes a welcome page and search team bar (to home#search)
 #home
   %h1.display-1=t('.title')
   %p.blockquote-footer=t('.welcome')
 
   %h2
   #cover
-    -#Inserting cover image 
+    -#Inserting cover image
     =image_tag ('https://cdn.vox-cdn.com/thumbor/pmrS3G4xhLuuFOpxd6hmjBr5Y9s=/0x0:1200x800/1200x800/filters:focal(533x241:725x433)/cdn.vox-cdn.com/uploads/chorus_image/image/67870336/devine_5_MIT_getty_ringer_1.0.jpg'), :class => "img_class"
   %br
   .container
+    -# Search bar with fixed NBA team tags to select from
     .row
       .col-lg-12.mt-5
         .mx-auto{:style => "width: 400px"}
           = form_with(url: home_search_path, method: 'get', local: true) do
             .form-group
               = label_tag :team, 'Search for an NBA team '
-              -# = text_field_tag :team, nil, placeholder: 'Eg. Hawks', class: 'form-control'
               = select_tag :team, options_for_select(['Hawks', 'Celtics','Nets', 'Hornets','Bulls', 'Cavaliers','Mavericks', 'Nuggets','Pistons', 'Warriors','Rockets', 'Pacers','Clippers', 'Lakers','Grizzlies', 'Heat','Bucks', 'Timberwolves','Pelicans', 'Knicks','Thunder', 'Magic','76ers', 'Suns','Trail Blazers', 'Kings','Spurs', 'Raptors', "Jazz", "Wizards"]), class: 'form-control'
 
             = button_tag 'Search', class: 'btn btn-success btn-block'
+-# White space to fill up page
 - 2.times do
   %br
   %br

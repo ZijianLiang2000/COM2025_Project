@@ -99,6 +99,8 @@ en:
     cancelUserTeam:
       unsubscribeMessage: "The team is now unsubscribed"
       confirm: "OK"
+    showUserTeam:
+      subscribeMessageWhenNoTeam: "You haven't subscribed any team yet, pick your favourite team to subscribe to!"
   
   navigation:
     navBar:

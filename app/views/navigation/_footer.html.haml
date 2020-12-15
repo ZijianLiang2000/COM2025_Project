@@ -1,3 +1,4 @@
+-# Footer for all pages, has an About part to put in information of this site
 %footer.site-footer
   .container
     .row
@@ -9,15 +10,19 @@
         %h6 &nbsp&nbspCategories
         %ul.footer-links
           %li
+            -# has Games link to navigate to Games#Index
             %a{:href => "navigation_games"} Games
           %li
+            -# has Teams link to navigate to Teams#Index
             %a{:href => "navigation_teams"} Teams
       .col-xs-6.col-md-3
         %h6 &nbsp&nbspQuick Links
         %ul.footer-links
           %li
+            -# Link to University of Surrey official site
             %a{:href => "http://surrey.ac.uk"}=t(".university_site")
           %li
+            -# Link to Contact#contact
             %a{:href => "navigation_contact"}=t(".contact_us")
 
 

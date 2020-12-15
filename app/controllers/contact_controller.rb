@@ -2,6 +2,9 @@ class ContactController < ApplicationController
     def contact
     end
     
+    # Controller to request for contact under Contact#Contact which handles the input parameters to be
+    # allocated in a fixed format and delivered to the Rails console.
+    # Then, the view will be redirected back to the home page.
     def request_contact
         name = params[:name]
         email = params[:email]

@@ -1,3 +1,6 @@
+-# The page to display detailed information of Team (home page from API searching)
+-# Includes Logo of game, team name, nba franchise
+-# used API response from home controller
 .wrapper
   #homeSearch
     %section.jumbotron.text-center
@@ -13,10 +16,10 @@
           %dd= @team['nbaFranchise']
     .teamStandings
       %h1.jumbotron-heading
+        -# Team standings part to display detailed information of Team for season we inputted inside controller
+        -# default 2019-2020 season
         Team Standings
       %h4
-        -# Wanted to store team ID as a variable ':teamId' and pass it to controller to use, but unsuccessful
-        -# %a{ href: "seasonSearch", :teamId => @team['teamId']} Season #{@year} 
         Season #{@year} 
       %dl 
         %dt Win
@@ -37,7 +40,7 @@
         %dd= @teamStandings["api"]["standings"][0]["lastTenLoss"]
         %dt Win Streak:
         %dd= @teamStandings["api"]["standings"][0]["winStreak"]
-
+    -# Team roster to show team's each player name, position and jersey number as table
     .roster
       %table.table.table-striped
         %thead.thead-dark

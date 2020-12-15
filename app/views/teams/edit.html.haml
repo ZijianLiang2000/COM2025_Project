@@ -1,7 +1,7 @@
 %h1 Editing team
-
+-# edit page which includes the form view to be rendered
 = render 'form'
-
+-# also provides button to teams#show and back to teams#index, with button_to and get method and Bootstrap
 = button_to 'Show', @team, :method => :get, class: "btn btn-primary"
 = button_to 'Back', teams_path, :method => :get, class: "btn btn-primary"
 %br

@@ -12,7 +12,8 @@ class TeamsController < ApplicationController
   def show
   end
 
-  # Controller for API request for RapidAPI
+  # The engine for using API requests, implementing RapidAPI as platform to parse corresponding URL including keys input,
+  # into JSON type, if no response, return nil.
   def request_api(url)
     response = Excon.get(
       url,
@@ -49,11 +50,12 @@ class TeamsController < ApplicationController
   def showUserTeam
     # If user has a team subscribed
     if current_user.teams.first != nil
+      # These variables will correspond to each column value of subscribed team
       @userTeamApiId = current_user.teams.first.apiId
       teams = find_team_by_ID(@userTeamApiId)
       @team = teams["api"]["teams"].first
     end
-    
+    # This variable will be the current user subscribed team
     @userTeams = current_user.teams
   end
 

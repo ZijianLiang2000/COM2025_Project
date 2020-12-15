@@ -7,6 +7,7 @@ class StoreData < ActiveRecord::Migration[5.1]
 
     Game.destroy_all
     Game.reset_pk_sequence
+    
     values = [{homeTeamName: 'Atlanta Hawks', awayTeamName: 'New York Knicks', gameWinnerId: 20, homeTeamScore: 131, awayTeamScore: 136, gameDate: '2020-03-11'},
       {homeTeamName: 'Boston Celtics', awayTeamName: 'Oklahoma City Thunder', gameWinnerId: 21, homeTeamScore: 84, awayTeamScore: 98, gameDate: '2020-07-24'},
       {homeTeamName: 'Boston Celtics', awayTeamName: 'Phoenix Suns', gameWinnerId: 2, homeTeamScore: 117, awayTeamScore: 103, gameDate: '2020-07-26'},

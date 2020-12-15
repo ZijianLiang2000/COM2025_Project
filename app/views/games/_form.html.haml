@@ -1,12 +1,15 @@
 #gameForm
+  -# Form for game will be used in edit and new
+  -# which user can create or edit each parameter field of the Game object 
   = form_for @game do |f|
+    -# If game form has any error interfering with saving the game, error will be explained as message
     - if @game.errors.any?
       #error_explanation
         %h2= "#{pluralize(@game.errors.count, "error")} prohibited this game from being saved:"
         %ul
           - @game.errors.full_messages.each do |message|
             %li= message
-    
+    -# Each field label and input field for the Game form with Bootstrap
     .field
       = f.label t('.homeTeamName')
       = f.text_field :homeTeamName, class:"form-control"
@@ -24,6 +27,8 @@
       = f.number_field :awayTeamScore, class:"form-control"
     .field
       .date
+        -# Game date field will be used Bootstrap datepicker and Javascript code to provide
+        -# interaction Game date selection in game date format.
         = f.label t('.gameDate')
         -# = f.date_select :gameDate
         = f.text_field :gameDate, hide_label: true, class: 'datepicker'

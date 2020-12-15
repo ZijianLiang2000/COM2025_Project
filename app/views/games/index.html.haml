@@ -1,13 +1,16 @@
 #timeTable
   %h1 
     =t('.title')
+    -# The index page under game would show all the relavant information by form of each game
   - @games.each do |game|
     %table.table.table-striped
       %thead.thead-dark
+        -# game date would be at the top header 
         %tr
           %th{:colspan => 8}=game.gameDate
       %thead.thead-dark
         %tr    
+          -# each parameter would be displayed for each game inside table
           %th 
             =t('.homeTeamName')
           %th
@@ -19,17 +22,24 @@
             =t('.awayTeamName')    
       
       %tbody
+        
         %tr{id: "game_#{game.id}"}
+          -# Table will be designed as scoreboard layout to display home team, away team and their scores
+          -# When clicking on home team name, the link_to method will link us to the corresponding homepage of team
+          -# (home#search rather than team#show)
           %td= link_to game.homeTeamName, home_search_path(:linkToApiId => Team.find_by(teamName: game.homeTeamName)), class: "btn btn-primary"
           %td= game.homeTeamScore
           %td= ":"
           %td= game.awayTeamScore
+          -# When clicking on away team name, the link_to method will link us to the corresponding homepage of team
+          -# (home#search rather than team#show)
           %td= link_to game.awayTeamName, home_search_path(:linkToApiId => Team.find_by(teamName: game.awayTeamName)), class: "btn btn-primary"
           %td= link_to 'More', game, class: "btn btn-success"
           %td= link_to ' Edit ', edit_game_path(game), class: "btn btn-warning"
           %td= link_to ' Destroy ', game, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, class: "btn btn-danger"
       %br
   %br
+  -# Links to limit game number for a page and link to next page and previous page
   .backLink
     = link_to 'Next Page', games_path(page: @page + 1), :method => :get, :class => "btn btn-primary"
     |

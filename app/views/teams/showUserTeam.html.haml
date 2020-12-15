@@ -1,17 +1,18 @@
+-# View to show the subscribed team by current user, after setting the current user's team association
 #showUserTeam
   .wrapper
     %table.table.table-striped
       %tbody
         %tr
+          -# If user doesn't subscribe to any team, tell them to do so
           - if @userTeams.count == 0
             =image_tag ('https://i.pinimg.com/originals/24/86/51/2486517534aa0b0d175c18c343e50d82.jpg'), :class => "img_class"
             %br
             %br
-            %p You haven't subscribed any team yet, pick your favourite team to subscribe to!
+            %p=t('.subscribeMessageWhenNoTeam')
 
-            -# %p= button_to "Available Teams", navigation_teams_path, :method => :get, class: "btn btn-primary"
           - else
-
+            -# If user has subscribed to a team, display its relavant info
             - @userTeams.each do |team|
               =image_tag (@team['logo']), :class => "img_class"
               %br

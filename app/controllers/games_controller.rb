@@ -1,10 +1,11 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  # Pagination implementation to specify Game objects per page
   GAMES_PER_PAGE = 10
-  # GET /games
-  # GET /games.json
+
   def index
+    # Specify page and game varialbe to be limited in a scope of 10 games per page
     @page = params.fetch(:page, 0).to_i
     @games = Game.offset(@page * GAMES_PER_PAGE).limit(GAMES_PER_PAGE)
   end
@@ -14,6 +15,7 @@ class GamesController < ApplicationController
   def show
   end
 
+  # Shows the list of games linked to corresponding Team object (by its ID)
   def showTeamGames
     @teamGames = Team.find(params[:teamIdToFindGames]).games
   end

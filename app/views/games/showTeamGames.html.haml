@@ -1,10 +1,13 @@
+-# This view would render all games and their information of the corresponding team
 #showTeamGames
     %table.table.table-striped
         %tbody
         %tr
+            -# For all the games of the team selected 
             - @teamGames.each do |game|
                 %table.table.table-striped
                     %thead.thead-dark
+                        -# display all relavant information
                         %tr
                         %th{:colspan => 8}=game.gameDate
                     %thead.thead-dark
@@ -22,6 +25,7 @@
                         -# %th
                         -# %th
 
+                    -# These operations are similar to game#index
                     %tbody
                         %tr{id: "game_#{game.id}"}
                         %td= link_to game.homeTeamName, home_search_path(:linkToApiId => Team.find_by(teamName: game.homeTeamName)), class: "btn btn-primary"

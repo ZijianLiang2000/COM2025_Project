@@ -10,7 +10,7 @@
     %meta{'name' => 'description', 'content' => t('app_description')}
     %meta{'name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'}
 
-
+    -# Links and scripts to include bootstrap
     %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css", :rel => "stylesheet"}/
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"}
     %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"}
@@ -25,7 +25,10 @@
     -# - flash.each do |key, value|
     -#   .alert.alert-warning
     -#     = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
+
+    -# Renders navbar for every page above content
     = render partial: "navigation/navBar"
     = yield
+    -# Renders footer for below page above content
     = render partial: "navigation/footer"
 

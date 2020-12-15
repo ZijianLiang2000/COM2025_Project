@@ -1,3 +1,4 @@
+-# Navbars has a logo, and link to home page, Games#index, Teams#index, Contact#contact and Teams#showUserTeam view
 #nav
   - flash.each do |key, value|
     .alert.alert-warning
@@ -19,8 +20,10 @@
       %a{:href => "team_showUserTeam"}=t(".subscription")
     #user
       %li
+        -# Devise funciton to test if user signed in
         - if user_signed_in?
           %li
+            -# If singed in, put up current user email address, link to its profile and to log out site
             .userEmail
               = current_user.email
           %li
@@ -28,6 +31,7 @@
           %li
             = link_to t('.logout'), destroy_user_session_path, method: 'delete'
         - else
+          -# If didn't sign in, put up link to log in and to sign up
           %li
             = link_to t('.login'), new_user_session_path
           %li

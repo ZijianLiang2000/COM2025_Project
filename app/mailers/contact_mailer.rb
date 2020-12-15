@@ -1,5 +1,6 @@
 class ContactMailer < ApplicationMailer
     
+    # Mailer's controller method to allocated each parameters to their corresponding variables
     def contact_email(email, name, nbaPassCode, telephone, message)
         @email = email
         @name = name
@@ -7,13 +8,7 @@ class ContactMailer < ApplicationMailer
         @telephone = telephone
         @message = message
 
+        # Mailer's cc would take in all parameters to be used to do validation in Mailer testing
         mail cc: "#{@email}+#{@name}+#{@nbaPassCode}+#{@telephone}+#{@message}"
-        # mail to: "infoReceiver@gmail.com"
-        # mail from: 'infoSender@gmail.com'
-        # mail email: @email
-        # mail name: @name
-        # mail nbaPassCode: @nbaPassCode
-        # mail telephone: @telephone
-        # mail message: @message
     end
 end

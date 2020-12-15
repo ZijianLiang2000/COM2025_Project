@@ -1,12 +1,15 @@
 #teamsForm
+  -# Form for team will be used in edit and new
+  -# which user can create or edit each parameter field of the Team object 
   = form_for @team do |f|
+    -# If team form has any error interfering with saving the team, error will be explained as message
     - if @team.errors.any?
       #error_explanation
         %h2= "#{pluralize(@team.errors.count, "error")} has occured, game unsaved, please check again:"
         %ul
           - @team.errors.full_messages.each do |message|
             %li= message
-
+    -# Each field label and input field for the Team form with Bootstrap
     .field
       = f.label t('.teamName')
       = f.text_field :teamName, class:"form-control"
