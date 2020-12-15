@@ -1,7 +1,8 @@
 class AddSeasonalTeams < ActiveRecord::Migration[5.1]
   def change
-
+    #To avoid contradiction, drop Users_teams association table if created 
     drop_table :users_teams, if_exists: true
+    # Create  Users_teams association table
     create_join_table :users, :teams do |t|
       t.index [:user_id, :team_id]
       t.index [:team_id, :user_id]
@@ -11,7 +12,10 @@ class AddSeasonalTeams < ActiveRecord::Migration[5.1]
     # database initially has Team objects, and deleted_all executed.
     # if not, the error cause new Team object created have index not starting from #1
 
+    # To avoid contradiction and messing up ID of newly created teams
+    # If teams already created, in case running migrations again, would destroy all first
     Team.destroy_all
+    # Rearrange newly created Team ID back to start from 1
     Team.reset_pk_sequence
     
     values = [{teamName: 'Atlanta Hawks', apiId: 1},
@@ -44,6 +48,8 @@ class AddSeasonalTeams < ActiveRecord::Migration[5.1]
       {teamName: 'Toronto Raptors', apiId: 38},
       {teamName: 'Utah Jazz', apiId: 40},
       {teamName: 'Washington Wizards', apiId: 41}]
+
+    # imports and validates all above value by gem
     Team.import values, validate: true
   end
 end

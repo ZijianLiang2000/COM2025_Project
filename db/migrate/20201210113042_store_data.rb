@@ -1,11 +1,15 @@
 class StoreData < ActiveRecord::Migration[5.1]
+  # Method to input all the REAL game records for 30 teams by using ActiveRecord-import gem
   def change
 
     # The following two lines of code are needed to be commented out when
     # database initially has Game objects, and deleted_all executed.
     # if not, the error cause new Game object created have index not starting from #1
 
+    # To avoid contradiction and messing up ID of newly created games
+    # If games already created, in case running migrations again, would destroy all first
     Game.destroy_all
+    # Rearrange newly created Game ID back to start from 1
     Game.reset_pk_sequence
     
     values = [{homeTeamName: 'Atlanta Hawks', awayTeamName: 'New York Knicks', gameWinnerId: 20, homeTeamScore: 131, awayTeamScore: 136, gameDate: '2020-03-11'},
@@ -471,6 +475,7 @@ class StoreData < ActiveRecord::Migration[5.1]
       {homeTeamName: 'Washington Wizards', awayTeamName: 'Milwaukee Bucks', gameWinnerId: 17, homeTeamScore: 113, awayTeamScore: 126, gameDate: '2020-08-12'},
       {homeTeamName: 'Boston Celtics', awayTeamName: 'Washington Wizards', gameWinnerId: 30, homeTeamScore: 90, awayTeamScore: 96, gameDate: '2020-08-13'}]
       
+    # imports and validates all above value by gem
     Game.import values, validate: true
   end
 end
