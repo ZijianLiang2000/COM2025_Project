@@ -10,8 +10,8 @@ class AddSeasonalTeams < ActiveRecord::Migration[5.1]
     # database initially has Team objects, and deleted_all executed.
     # if not, the error cause new Team object created have index not starting from #1
 
-    # Team.destroy_all
-    # Team.reset_pk_sequence
+    Team.destroy_all
+    Team.reset_pk_sequence
     
     values = [{teamName: 'Atlanta Hawks', apiId: 1},
       {teamName: 'Boston Celtics', apiId: 2},

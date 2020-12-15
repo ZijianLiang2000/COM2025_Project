@@ -69,3 +69,5 @@ gem 'rails-ujs', '~> 0.1.0'
 gem 'bootstrap-datepicker-rails'
 
 gem 'bootsnap'
+
+gem 'activerecord-reset-pk-sequence'
