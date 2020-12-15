@@ -1,6 +1,7 @@
 class AddSeasonalTeams < ActiveRecord::Migration[5.1]
   def change
 
+    drop_table :users_teams, if_exists: true
     create_join_table :users, :teams do |t|
       t.index [:user_id, :team_id]
       t.index [:team_id, :user_id]
