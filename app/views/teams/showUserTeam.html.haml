@@ -20,8 +20,8 @@
                 %th{:colspan => 3} Subscribed to: &nbsp #{team.teamName}
               .linkTag
                 %tr
-                  %td= link_to 'Relavant Games', game_showTeamGames_path(:teamIdToFindGames => team.id)
-                  %td= link_to 'Show', home_search_path(:linkToApiId => Team.find_by(teamName: team.teamName))
-                  %td= link_to 'Unsubscribe', team_cancelUserTeam_path
+                  %td= link_to 'Relavant Games', game_showTeamGames_path(:teamIdToFindGames => team.id), class: "btn btn-primary"
+                  %td= link_to 'Show', home_search_path(:linkToApiId => Team.find_by(teamName: team.teamName)), class: "btn btn-success"
+                  %td= link_to 'Unsubscribe', team_cancelUserTeam_path, class: "btn btn-danger"
     .push
   .footer
